@@ -8,6 +8,18 @@ import { RiStarFill, RiArrowRightLine } from "react-icons/ri";
 const { Title, Paragraph } = Typography;
 
 export default function MainContent() {
+
+  const cellphone = "59177694976";
+  const message =
+    "Hola, estoy interesado en solicitar una asesoría, ¿me puede brindar más información por favor?.";
+
+  const handleConsultationClick = () => {
+    const encodedMessage = encodeURIComponent(message);
+    const url = `https://wa.me/${cellphone}?text=${encodedMessage}`;
+
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <>
       <section className="relative overflow-hidden">
@@ -40,7 +52,7 @@ export default function MainContent() {
                 <Button
                   type="primary"
                   size="large"
-                  href="/contacto"
+                  onClick={handleConsultationClick}
                   className="h-12 px-8 bg-primary hover:bg-primary/90 border-none rounded-lg font-semibold text-lg flex items-center gap-2 shadow-lg hover:shadow-xl transition-all"
                 >
                   Solicitar Asesoría
@@ -82,15 +94,12 @@ export default function MainContent() {
                   height={600}
                   className="w-full h-auto object-cover"
                 />
-                {/* Overlay sutil */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Servicios con diseño de tarjetas elegantes */}
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="text-center mb-16">
           <Title
@@ -163,7 +172,6 @@ export default function MainContent() {
         </div>
       </section>
 
-      {/* Caso de éxito / Resultados */}
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="bg-gradient-to-r from-primary/10 via-white/20 to-secondary/10 rounded-3xl p-8 md:p-12 lg:p-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -250,7 +258,7 @@ export default function MainContent() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="large"
-                href="/contacto"
+                onClick={handleConsultationClick}
                 className="h-12 px-8 bg-white text-primary hover:bg-white/90 border-none rounded-lg font-semibold text-lg shadow-lg"
               >
                 Solicitar Consulta

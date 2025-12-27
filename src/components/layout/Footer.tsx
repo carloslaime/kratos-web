@@ -5,8 +5,12 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { Typography } from "antd";
 
 const { Title } = Typography;
-
 export default function Footer() {
+
+  const address = "Calle 21 de Mayo #2033, Casi esquina Andrés Ibáñez";
+  const cellphone = "+591 77694976";
+  const email = "polikratosconsulting@gmail.com";
+
   return (
     <footer className="bg-secondary text-white border-t border-secondary">
       <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col md:flex-row md:justify-between md:items-start gap-8">
@@ -18,15 +22,15 @@ export default function Footer() {
             </Title>
             <div className="flex items-center gap-3">
               <FaMapMarkerAlt className="text-white" />
-              <span>Calle 21 de Mayo #2033, Casi esquina Andrés Ibáñez</span>
+              <span>{address}</span>
             </div>
             <div className="flex items-center gap-3">
               <FaPhoneAlt className="text-white" />
-              <span>+591 78546698</span>
+              <span>{cellphone}</span>
             </div>
             <div className="flex items-center gap-3">
               <FaEnvelope className="text-white" />
-              <span>polikratosconsulting@gmail.com</span>
+              <span>{email}</span>
             </div>
           </div>
         </div>
