@@ -28,72 +28,156 @@ export default function MainContent() {
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-secondary/10 rounded-full translate-y-32 -translate-x-32 blur-3xl" />
 
         <div className="relative mx-auto max-w-6xl px-4 py-6 md:py-8">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 rounded-full">
-                <RiStarFill className="text-primary text-sm" />
-                <span className="text-xs font-semibold text-primary">Líderes en Estrategias Digitales</span>
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div className="relative space-y-5">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/15 to-secondary/15 rounded-full border border-primary/20 shadow-sm group hover:shadow-md transition-shadow duration-300">
+                <div className="relative">
+                  <div className="absolute -inset-1 rounded-full bg-primary/10 animate-ping" style={{animationDuration: '3s'}}></div>
+                  <RiStarFill className="text-primary text-sm relative z-10 group-hover:rotate-180 transition-transform duration-500" />
+                </div>
+                <span className="text-xs font-bold text-primary tracking-wide">Líderes en Estrategias Digitales</span>
               </div>
 
-              <Title
-                level={1}
-                className="!text-2xl md:!text-3xl lg:!text-4xl text-primary font-black leading-tight"
-              >
-                Transformando Información en Estrategias con Tecnología, Visión y Acción
-              </Title>
+              <div className="relative">
+                <div className="absolute -left-3 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-primary rounded-full animate-pulse-slow"></div>
+                <Title
+                  level={1}
+                  className="!text-2xl md:!text-3xl lg:!text-4xl font-bold leading-tight pl-6"
+                >
+                  <span className="text-primary block">Transformando Información</span>
+                  <span className="text-secondary block mt-2">en Estrategias Digitales</span>
+                  <span className="text-primary block mt-2 text-lg md:text-xl font-semibold opacity-90">
+                    Tecnología • Visión • Acción
+                  </span>
+                </Title>
+              </div>
 
-              <Paragraph className="!text-base md:!text-lg text-secondary/80 max-w-2xl leading-relaxed">
-                Especialistas en análisis de datos dentro del entorno digital. 
-								Nos enfocamos en brindar inteligencia estratégica basada en actividad digital para construir 
-                campañas que conectan y convencen.
-              </Paragraph>
+              <div className="relative pl-6">
+                <div className="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-primary/40 to-secondary/40 rounded-full"></div>
+                <Paragraph className="!text-xs md:!text-sm text-secondary/85 leading-snug max-w-lg">
+                  <span className="font-semibold text-primary">Especialistas en análisis de datos</span> dentro del entorno digital. 
+                  Creamos inteligencia estratégica basada en actividad digital para construir 
+                  <span className="relative">
+                    <span className="relative z-10"> campañas que generan impacto</span>
+                    <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-secondary/40 rounded-full"></span>
+                  </span>.
+                </Paragraph>
+              </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <Button
-                  type="primary"
-                  size="large"
+              <div className="flex flex-col sm:flex-row gap-3 pt-3">
+                <button
                   onClick={handleConsultationClick}
-                  className="h-10 px-6 bg-primary hover:bg-primary/90 border-none rounded-lg font-semibold text-base flex items-center gap-2 shadow-lg hover:shadow-xl transition-all"
+                  className="group relative h-11 px-7 bg-gradient-to-r from-primary to-primary/90 hover:from-primary hover:to-secondary border-0 rounded-lg font-bold text-sm flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
                 >
-                  Solicitar Asesoría
-                  <RiArrowRightLine />
-                </Button>
-                <Button
-                  size="large"
-                  href="/nosotros"
-                  className="h-10 px-6 bg-white text-primary border-primary hover:bg-primary/5 hover:border-primary/80 rounded-lg font-semibold text-base shadow-md hover:shadow-lg transition-all"
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                  <span className="relative text-white">Solicitar Asesoría</span>
+                  <RiArrowRightLine className="relative text-white group-hover:translate-x-1 transition-transform" />
+                </button>
+                
+                <button
+                  onClick={() => window.location.href = '/nosotros'}
+                  className="group h-11 px-7 bg-white/90 hover:bg-white border border-primary/30 hover:border-primary rounded-lg font-bold text-sm flex items-center justify-center gap-2 shadow hover:shadow-md transition-all duration-300 relative overflow-hidden"
                 >
-                  Conocer Más
-                </Button>
+                  <span className="relative text-primary">Conocer Más</span>
+                  <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
               </div>
 
-              <div className="grid grid-cols-3 gap-4 pt-6">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">10+</div>
-                  <div className="text-xs text-secondary/70">Campañas</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">95%</div>
-                  <div className="text-xs text-secondary/70">Éxito</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">24/7</div>
-                  <div className="text-xs text-secondary/70">Acompañamiento Estratégico</div>
-                </div>
+              <div className="grid grid-cols-3 gap-3 pt-6">
+                {[
+                  { value: "+10", label: "Campañas Exitosas", color: "primary" },
+                  { value: "95%", label: "Tasa de Éxito", color: "secondary" },
+                  { value: "24/7", label: "Soporte Estratégico", color: "primary" }
+                ].map((stat, index) => (
+                  <div 
+                    key={index} 
+                    className="group relative p-3 rounded-xl bg-gradient-to-br from-white to-gray-50 hover:from-primary/5 hover:to-secondary/5 border border-gray-200 hover:border-primary/20 transition-all duration-300 cursor-pointer"
+                  >
+                    <div className={`text-2xl font-black text-${stat.color} mb-1 group-hover:scale-105 transition-transform duration-300`}>
+                      {stat.value}
+                    </div>
+                    <div className="text-[10px] font-medium tracking-wide uppercase">
+                      {stat.label}
+                    </div>
+                    <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-${stat.color}/30 rounded-full group-hover:w-3/4 transition-all duration-300`}></div>
+                  </div>
+                ))}
               </div>
+
+              <div className="absolute -right-2 top-10 w-1 h-8 bg-gradient-to-b from-primary to-secondary rounded-full animate-pulse-slow opacity-50"></div>
+              <div className="absolute right-4 bottom-10 w-2 h-2 rounded-full bg-secondary/30 animate-pulse" style={{animationDelay: '0.5s'}}></div>
             </div>
 
-            <div className="relative">
-              <div className="relative rounded-xl overflow-hidden shadow-lg">
-                <Image
-                  src="/images/logotipo.png"
-                  alt="Estrategia Política"
-                  width={500}
-                  height={500}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+            <div className="relative h-[350px] flex items-center justify-center">
+              <div className="relative w-80 h-80">
+                <div className="absolute -inset-4 animate-spin-slow">
+                  <div className="w-full h-full rounded-full border-2 border-primary/30 relative">
+                    {[...Array(8)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute w-2 h-2 rounded-full bg-secondary"
+                        style={{
+                          top: '50%',
+                          left: '50%',
+                          transform: `translate(-50%, -50%) rotate(${i * 45}deg) translateX(92px)`,
+                        }}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                <div className="absolute -inset-2 animate-spin-slow-reverse">
+                  <div className="w-full h-full rounded-full border border-secondary/40" />
+                </div>
+
+                <div className="relative w-full h-full">
+                  <div className="absolute inset-0 animate-image-rotate-front">
+                    <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white/50 bg-white">
+                      <div className="absolute inset-0 bg-white" />
+                      <Image
+                        src="/images/logotipo.png"
+                        alt="Logotipo Poli Kratos"
+                        width={320}
+                        height={320}
+                        className="w-full h-full object-contain p-6 relative z-0"
+                        priority
+                      />
+                      <div className="absolute inset-0 rounded-full" />
+                    </div>
+                  </div>
+
+                  <div className="absolute inset-0 animate-image-rotate-back">
+                    <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white/50">
+                      <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 z-10 mix-blend-overlay" />
+                      <Image
+                        src="/images/blanco-bg-verde.jpg"
+                        alt="Estrategia Digital"
+                        width={320}
+                        height={320}
+                        className="w-full h-full object-cover relative z-0"
+                        priority
+                      />
+                      <div className="absolute inset-0 rounded-full ring-4 ring-white/30" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/5 via-transparent to-secondary/5 animate-pulse-slow" />
+
+                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-48 h-6 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-lg animate-shadow-pulse" />
+
+                <div className="absolute -top-2 -right-2 animate-bounce-slow">
+                  <div className="w-3 h-3 bg-primary rounded-full" />
+                </div>
+                <div className="absolute -bottom-2 -left-2 animate-bounce-slow" style={{animationDelay: '0.5s'}}>
+                  <div className="w-3 h-3 bg-secondary rounded-full" />
+                </div>
+                <div className="absolute -top-2 -left-2 animate-bounce-slow" style={{animationDelay: '1s'}}>
+                  <RiStarFill className="text-primary text-xs" />
+                </div>
+                <div className="absolute -bottom-2 -right-2 animate-bounce-slow" style={{animationDelay: '1.5s'}}>
+                  <RiStarFill className="text-secondary text-xs" />
+                </div>
               </div>
             </div>
           </div>
