@@ -253,56 +253,135 @@ export default function MainContent() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-12">
-        <div className="bg-gradient-to-r from-primary/10 via-white/20 to-secondary/10 rounded-2xl p-6 md:p-8 lg:p-10">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 mb-4">
-                <div className="w-1.5 h-6 bg-secondary rounded-full" />
-                <span className="text-secondary font-semibold text-sm">Caso de Éxito</span>
-              </div>
-              
-              <Title level={2} className="!text-2xl md:!text-3xl lg:!text-4xl text-primary font-bold mb-4">
-                Resultados que <span className="text-secondary">Hablan por Sí Solos</span>
-              </Title>
-              
-              <Paragraph className="!text-base text-secondary/80 mb-6 leading-relaxed">
-                En la última campaña nacional, logramos incrementar la intención de voto 
-                en un 42% mediante estrategias digitales personalizadas y análisis de datos 
-                en tiempo real.
-              </Paragraph>
-              
-              <div className="space-y-4">
-                <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="font-semibold text-primary text-sm">Alcance Digital</span>
-                    <span className="font-bold text-secondary">+250%</span>
+        <div className="bg-primary !text-white rounded-2xl p-6 md:p-8 shadow-xl overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full -translate-y-32 translate-x-32"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-32 -translate-x-32"></div>
+          
+          <div className="relative z-10">
+            <div className="grid lg:grid-cols-2 gap-10 items-center">
+              <div className="space-y-8">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-1 animate-pulse">
+                    <div className="w-2 h-2 rounded-full bg-secondary"></div>
+                    <div className="w-2 h-2 rounded-full bg-white"></div>
+                    <div className="w-2 h-2 rounded-full bg-secondary"></div>
                   </div>
-                  <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-secondary rounded-full w-3/4" />
+                  <div className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 hover:bg-white/15 transition-all duration-300 group cursor-pointer">
+                    <span className="text-sm font-bold text-white group-hover:tracking-wide transition-all duration-300">HISTORIA DE ÉXITO</span>
                   </div>
                 </div>
                 
-                <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="font-semibold text-primary text-sm">Engagement</span>
-                    <span className="font-bold text-secondary">+180%</span>
-                  </div>
-                  <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-secondary rounded-full w-2/3" />
-                  </div>
+                {/* Título con efecto */}
+                <div className="relative">
+                  <div className="absolute -left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-secondary via-white to-secondary rounded-full animate-pulse-slow"></div>
+                  <Title level={2} className="!text-3xl md:!text-4xl !text-white font-bold pl-6">
+                    <span className="block">Resultados que</span>
+                    <span className="block !text-white mt-2 animate-float-slow">Superan Expectativas</span>
+                  </Title>
+                </div>
+                
+                <Paragraph className="!text-l !text-white/90 leading-relaxed pl-6">
+                  En nuestros primeros años de operación, hemos demostrado que la estrategia 
+                  correcta puede generar <span className="font-bold text-white">impacto inmediato</span>, 
+                  incluso para empresas en crecimiento.
+                </Paragraph>
+                
+                <div className="grid grid-cols-2 gap-4 pl-6">
+                  {[
+                    { value: "+85%", label: "Crecimiento Digital", color: "white", progress: 85, delay: "0s" },
+                    { value: "+72%", label: "Interacción", color: "white", progress: 72, delay: "0.2s" },
+                    { value: "+68%", label: "Reconocimiento", color: "white", progress: 68, delay: "0.4s" },
+                    { value: "92%", label: "Satisfacción", color: "white", progress: 92, delay: "0.6s" }
+                  ].map((metric, index) => (
+                    <div 
+                      key={index}
+                      className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl p-4 transition-all duration-300 group hover:scale-[1.02] hover:shadow-lg cursor-pointer"
+                      style={{animationDelay: metric.delay}}
+                    >
+                      <div className="flex items-end justify-between mb-3">
+                        <div className={`text-3xl font-bold text-${metric.color} group-hover:scale-110 transition-transform duration-300`}>
+                          {metric.value}
+                        </div>
+                        <RiArrowRightLine className={`text-${metric.color} opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300`} />
+                      </div>
+                      <div className="text-sm text-white/80 mb-2">{metric.label}</div>
+                      <div className="relative h-1.5 bg-white/20 rounded-full overflow-hidden">
+                        <div 
+                          className={`absolute top-0 left-0 h-full bg-${metric.color} rounded-full transition-all duration-1000`}
+                          style={{ width: '0%' }}
+                          ref={(el) => {
+                            if (el) {
+                              setTimeout(() => {
+                                el.style.width = `${metric.progress}%`;
+                              }, index * 200);
+                            }
+                          }}
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
-            
-            <div className="relative">
-              <div className="relative rounded-xl overflow-hidden shadow-lg">
-                <Image
-                  src="/images/img4.jpg"
-                  alt="Resultados de campaña"
-                  width={550}
-                  height={350}
-                  className="w-full h-auto object-cover"
-                />
+              
+              <div className="relative">
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-secondary to-white rounded-2xl blur opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse-glow"></div>
+                  <div className="relative bg-white rounded-xl overflow-hidden shadow-2xl">
+                    <div className="relative aspect-video overflow-hidden">
+                      <Image
+                        src="/images/img4.jpg"
+                        alt="Proyecto exitoso"
+                        width={600}
+                        height={400}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        priority
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/30 to-transparent opacity-60 group-hover:opacity-70 transition-opacity duration-500"></div>
+                    </div>
+                    
+                    <div className="absolute top-6 right-6">
+                      <div className="bg-white text-primary px-4 py-2 rounded-full shadow-lg font-bold text-sm animate-bounce-slow">
+                        +85% CRECIMIENTO
+                      </div>
+                    </div>
+                    
+                    <div className="absolute bottom-0 left-0 right-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-white/95 backdrop-blur-sm p-6">
+                      <div className="text-primary">
+                        <div className="font-bold text-lg mb-1">Campaña en Elecciones Nacionales Exitosa</div>
+                        <div className="text-sm text-secondary/80 mb-3">Resultados en tiempo récord</div>
+                        <div className="flex items-center gap-4 text-xs">
+                          <div className="flex items-center gap-1">
+                            <div className="w-2 h-2 rounded-full bg-primary"></div>
+                            <span>6 meses de ejecución</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <div className="w-2 h-2 rounded-full bg-secondary"></div>
+                            <span>ROI positivo desde mes 1</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="absolute -top-3 -left-3 w-6 h-6 rounded-full bg-secondary animate-float"></div>
+                  <div className="absolute -bottom-3 -right-3 w-6 h-6 rounded-full bg-white animate-float" style={{animationDelay: '1s'}}></div>
+                </div>
+                
+                <div className="mt-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 hover:bg-white/15 transition-all duration-300 group cursor-pointer">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-white font-semibold">¿Tu proyecto siguiente?</div>
+                      <div className="text-white/70 text-sm">Podemos replicar estos resultados</div>
+                    </div>
+                    <button
+                      onClick={handleConsultationClick}
+                      className="bg-white !text-primary px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 transition-all duration-300 group-hover:scale-105"
+                    >
+                      Conversemos
+                      <RiArrowRightLine className="group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
