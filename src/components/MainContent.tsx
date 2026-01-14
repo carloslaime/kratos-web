@@ -199,19 +199,22 @@ export default function MainContent() {
               icon: <FaChartLine />,
               title: "Analítica Digital",
               description: "Te ayudamos a comprender a fondo el comportamiento de tus clientes.",
-              color: "from-primary/20 to-primary/5"
+              hoverColor: "primary",
+              delay: "0s"
             },
             {
               icon: <FaBullseye />,
               title: "Estrategias Políticas",
               description: "Soluciones integrales para candidatos, autoridades partidos e instituciones.",
-              color: "from-secondary/20 to-secondary/5"
+              hoverColor: "primary",
+              delay: "0.1s"
             },
             {
               icon: <FaUsers />,
               title: "Comunicación Política",
               description: "Discursos poderosos, narrativas coherentes y campañas que conectan emocionalmente con tu audiencia.",
-              color: "from-primary/20 to-secondary/5"
+              hoverColor: "primary",
+              delay: "0.2s"
             }
           ].map((service, index) => (
             <Card
@@ -219,34 +222,70 @@ export default function MainContent() {
               hoverable
               className={`
                 !border-0 !rounded-xl !shadow-lg
-                hover:!shadow-xl transition-all duration-300
-                bg-gradient-to-br ${service.color}
-                group
+                hover:!shadow-2xl transition-all duration-500
+                group relative overflow-hidden
+                transform hover:-translate-y-2
+                hover:border hover:border-${service.hoverColor}/20
               `}
+              style={{ animationDelay: service.delay }}
             >
-              <div className="flex flex-col items-center text-center space-y-4">
-                <div className="w-16 h-16 rounded-xl bg-white shadow-md flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <div className="text-5xl text-primary">
-                    {service.icon}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/0 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              
+              <div className={`absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-${service.hoverColor}/30 transition-all duration-500`}></div>
+              
+              <div className="relative flex flex-col items-center text-center space-y-4 p-4">
+                <div className="relative">
+                  <div className={`
+                    absolute -inset-4 rounded-full 
+                    border-2 border-${service.hoverColor}/20 
+                    opacity-0 group-hover:opacity-100 
+                    transition-all duration-500 
+                    overflow-hidden
+                  `}>
+                    <div className={`
+                      absolute inset-0 
+                      bg-primary
+                      opacity-0 group-hover:opacity-100 
+                      transition-opacity duration-500
+                    `}></div>
                   </div>
+                  
+                  <div className="relative w-16 h-16 rounded-full bg-white shadow-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 z-10 overflow-hidden">
+                    <div className={`absolute inset-0 bg-${service.hoverColor}/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                    <div className={`text-4xl text-${service.hoverColor} group-hover:scale-110 transition-transform duration-300 relative z-10`}>
+                      {service.icon}
+                    </div>
+                    
+                    <div className={`absolute inset-0 rounded-full border-2 border-transparent group-hover:border-${service.hoverColor}/20 transition-all duration-500`}></div>
+                  </div>
+                  
+                  {/* Puntos decorativos */}
+                  <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-primary/50 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500"></div>
+                  <div className="absolute -bottom-1 -left-1 w-3 h-3 rounded-full bg-secondary/50 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500" style={{transitionDelay: '0.1s'}}></div>
                 </div>
                 
-                <Title level={4} className="!text-xl !text-primary font-bold">
+                <Title level={4} className={`!text-xl !text-primary font-bold group-hover:text-${service.hoverColor} transition-colors duration-500 relative`}>
                   {service.title}
+                  <div className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-${service.hoverColor} group-hover:w-12 transition-all duration-500`}></div>
                 </Title>
                 
-                <Paragraph className="!text-secondary/80 !leading-relaxed !text-sm">
+                <Paragraph className="!text-secondary/80 !leading-relaxed !text-sm group-hover:text-secondary/90 transition-colors duration-300 transform translate-y-2 group-hover:translate-y-0 group-hover:opacity-100">
                   {service.description}
                 </Paragraph>
                 
-                <Button
-                  type="link"
-                  className="!text-primary !font-semibold !p-0 flex items-center gap-1 group-hover:gap-2 transition-all !text-sm"
+                <button
+                  className={`flex items-center gap-1 text-sm font-semibold text-${service.hoverColor} p-2 rounded-lg group-hover:bg-${service.hoverColor}/10 transition-all duration-500 group-hover:gap-3 group-hover:px-4`}
                 >
-                  Conocer más
-                  <FaChevronRight className="transition-transform group-hover:translate-x-1 text-xs" />
-                </Button>
+                  <span className="relative">
+                    Conocer más
+                    <span className={`absolute -bottom-0.5 left-0 w-0 h-0.5 bg-${service.hoverColor} group-hover:w-full transition-all duration-500`}></span>
+                  </span>
+                  <FaChevronRight className="transition-all duration-500 group-hover:translate-x-1 text-xs group-hover:text-base" />
+                </button>
               </div>
+              
+              {/* Efecto de partículas al fondo */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </Card>
           ))}
         </div>

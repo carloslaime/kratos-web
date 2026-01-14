@@ -223,3 +223,41 @@ body {
 .duration-1000 {
   transition-duration: 1000ms;
 }
+
+/* Asegurar que el círculo recorte el contenido */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Efecto de máscara circular para el icono */
+.circle-mask {
+  mask-image: radial-gradient(circle, white 100%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle, white 100%, transparent 100%);
+}
+
+/* Animación de pulso para los puntos */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Asegurar que el círculo exterior sea perfecto */
+.rounded-full {
+  border-radius: 9999px;
+}
+
+/* Transiciones suaves para el recorte */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
