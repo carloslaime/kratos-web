@@ -8,6 +8,8 @@ const { Title } = Typography;
 export default function Footer() {
 
   const address = "Calle 21 de Mayo #283, Edificio Kratos";
+  const mapsUrl =
+    "https://www.google.com/maps/search/?api=1&query=Calle+21+de+Mayo+%23283+Edificio+Kratos";
   const cellphone = "+591 77694976 - +591 77924704";
   const email = "polikratosconsulting@gmail.com";
 
@@ -20,10 +22,15 @@ export default function Footer() {
             <Title level={4} style={{ color: '#FFFFFF', fontSize: '16px', marginBottom: '12px' }}>
               Contacto
             </Title>
-            <div className="flex items-center gap-3 text-sm">
+            <a
+              href={mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-sm hover:underline hover:text-white/80 transition"
+            >
               <FaMapMarkerAlt className="text-white" size={16} />
               <span>{address}</span>
-            </div>
+            </a>
             <div className="flex items-center gap-3 text-sm">
               <FaPhoneAlt className="text-white" size={16} />
               <span>{cellphone}</span>
