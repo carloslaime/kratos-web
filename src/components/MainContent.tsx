@@ -23,19 +23,15 @@ export default function MainContent() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
-        <div className="absolute top-0 right-0 w-72 h-72 bg-primary/10 rounded-full -translate-y-32 translate-x-32 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-secondary/10 rounded-full translate-y-32 -translate-x-32 blur-3xl" />
-
         <div className="relative mx-auto max-w-6xl px-4 py-6 md:py-8">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div className="relative space-y-5">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/15 to-secondary/15 rounded-full border border-primary/20 shadow-sm group hover:shadow-md transition-shadow duration-300">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary rounded-full shadow-sm group hover:shadow-md transition-shadow duration-300">
                 <div className="relative">
                   <div className="absolute -inset-1 rounded-full bg-primary/10 animate-ping" style={{animationDuration: '3s'}}></div>
-                  <RiStarFill className="text-primary text-sm relative z-10 group-hover:rotate-180 transition-transform duration-500" />
+                  <RiStarFill className="text-white text-sm relative z-10 group-hover:rotate-180 transition-transform duration-500" />
                 </div>
-                <span className="text-xs font-bold text-primary tracking-wide">Líderes en Estrategias Digitales</span>
+                <span className="text-xs font-bold text-white tracking-wide">Líderes en Estrategias Digitales</span>
               </div>
 
               <div className="relative">
@@ -188,9 +184,9 @@ export default function MainContent() {
         <div className="text-center mb-12">
           <Title
             level={2}
-            className="!text-2xl md:!text-3xl lg:!text-4xl text-primary font-bold mb-3"
+            className="!text-2xl md:!text-3xl lg:!text-4xl !text-primary font-bold mb-3"
           >
-            Nuestros <span className="text-secondary">Servicios</span>
+            Nuestros Servicios
           </Title>
           <Paragraph className="!text-base md:!text-lg text-secondary/70 max-w-2xl mx-auto">
             Soluciones integrales diseñadas para cada etapa de tu campaña política
@@ -230,7 +226,7 @@ export default function MainContent() {
             >
               <div className="flex flex-col items-center text-center space-y-4">
                 <div className="w-16 h-16 rounded-xl bg-white shadow-md flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <div className="text-2xl text-primary">
+                  <div className="text-5xl text-primary">
                     {service.icon}
                   </div>
                 </div>
