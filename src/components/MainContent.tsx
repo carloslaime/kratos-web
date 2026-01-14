@@ -22,6 +22,99 @@ export default function MainContent() {
 
   return (
     <>
+      <section className="relative w-full h-screen md:h-[550px] overflow-hidden flex items-center justify-center">
+        <Image
+          src="/images/partenon.jpg"
+          alt="Fondo"
+          fill
+          className="object-cover grayscale absolute inset-0"
+          priority
+          sizes="100vw"
+        />
+
+        <div className="absolute inset-0 wave-texture"></div>
+
+        <div className="absolute inset-0 bg-gradient-to-b from-primary via-primary/80 to-primary/70 mix-blend-multiply"></div>
+
+        <div className="relative z-10 perspective-1000">
+          <div className="logo-3d">
+            <Image
+              src="/images/blanco-transparente.png"
+              alt="Logo centrado"
+              width={300}  
+              height={0}     
+              style={{ height: 'auto' }} 
+              priority
+            />
+          </div>
+        </div>
+
+        <style jsx>{`
+          .perspective-1000 {
+            perspective: 1000px;
+          }
+
+          .logo-3d {
+            animation: float3D 8s ease-in-out infinite;
+            transform-style: preserve-3d;
+          }
+
+          @keyframes float3D {
+            0%, 100% {
+              transform: 
+                rotateX(0deg) 
+                rotateY(0deg) 
+                translateY(0);
+            }
+            25% {
+              transform: 
+                rotateX(2deg) 
+                rotateY(3deg) 
+                translateY(-10px);
+            }
+            50% {
+              transform: 
+                rotateX(0deg) 
+                rotateY(-2deg) 
+                translateY(-5px);
+            }
+            75% {
+              transform: 
+                rotateX(-1deg) 
+                rotateY(2deg) 
+                translateY(-8px);
+            }
+          }
+
+          .wave-texture {
+            background: 
+              radial-gradient(
+                circle at 30% 30%,
+                rgba(255, 255, 255, 0.1) 0%,
+                transparent 50%
+              ),
+              radial-gradient(
+                circle at 70% 70%,
+                rgba(255, 255, 255, 0.08) 0%,
+                transparent 50%
+              );
+            animation: waveMove 25s ease-in-out infinite;
+            opacity: 0.3;
+          }
+
+          @keyframes waveMove {
+            0%, 100% {
+              background-position: 0% 0%, 100% 100%;
+              background-size: 200% 200%, 150% 150%;
+            }
+            50% {
+              background-position: 100% 100%, 0% 0%;
+              background-size: 150% 150%, 200% 200%;
+            }
+          }
+        `}</style>
+      </section>
+
       <section className="relative overflow-hidden">
         <div className="relative mx-auto max-w-6xl px-4 py-6 md:py-8">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
