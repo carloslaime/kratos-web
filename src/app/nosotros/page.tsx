@@ -68,19 +68,19 @@ const WHY_US = [
   {
     title: "Enfoque en datos",
     description: "Las decisiones estratégicas se basan en información precisa y monitoreo constante.",
-    icon: <BarChartOutlined className="text-2xl" />,
+    icon: <BarChartOutlined className="text-xl" />,
     color: "bg-primary/10"
   },
   {
     title: "Tecnología avanzada",
     description: "Uso de herramientas inteligentes: Smart Data, inteligencia digital y análisis predictivo.",
-    icon: <RocketOutlined className="text-2xl" />,
+    icon: <RocketOutlined className="text-xl" />,
     color: "bg-secondary/10"
   },
   {
     title: "Visión estratégica",
     description: "No solo recopilamos datos, los convertimos en acciones políticas y empresariales.",
-    icon: <EyeOutlined className="text-2xl" />,
+    icon: <EyeOutlined className="text-xl" />,
     color: "bg-primary/5"
   },
 ];
@@ -101,451 +101,516 @@ const ALLIES = [
     color: "from-secondary/15 to-secondary/5"
   },
   {
-    name: "Zazazar",
-    description: "Consultora en estrategias políticas con base en Florida, EE.UU.",
-    fullName: "Zazazar Consulting",
-    image: "/images/aliados/zazazar.jpg",
+    name: "Golden Social Suite",
+    description: "Empresa ecuatoriana de servicios de análisis de datos",
+    fullName: "Golden Social Suite",
+    image: "/images/aliados/goldensocial.png",
     color: "from-primary/10 to-secondary/10"
   },
 ];
 
+const MEMBERS = [
+  {
+    name: "Bruno Mertens",
+    description: "Gerente General - Consultor Digital",
+    image: "/images/miembros/brunomertens.jpg",
+    country: "/images/paises/bolivia.webp"
+  },
+  {
+    name: "Lic. Sergio Vega",
+    description: "DIrector Institucional - Presidente del Colegio de Politólogos Santa Cruz",
+    image: "/images/miembros/sergiovega.jpg",
+    country: "/images/paises/bolivia.webp"
+  },
+  {
+    name: "Cnl. Humberto Echalar",
+    description: "Asesor Político - Ex viceministro de gobierno",
+    image: "/images/miembros/humbertoechalar.jpg",
+    country: "/images/paises/bolivia.webp"
+  },
+  {
+    name: "Lic. Luis Serrate",
+    description: "Consultor Político",
+    image: "/images/miembros/luisserrate.jpg",
+    country: "/images/paises/bolivia.webp"
+  },
+  {
+    name: "Msg. Gustavo Villegas",
+    description: "Director de Relaciones Públicas",
+    image: "/images/miembros/gustavovillegas.jpg",
+    country: "/images/paises/bolivia.webp"
+  },
+  {
+    name: "Lic. Raul Alfonsin",
+    description: "Director de Asuntos Jurídicos - Consultor Jurídico",
+    image: "/images/miembros/raulalfonsin.jpg",
+    country: "/images/paises/bolivia.webp"
+  },
+]
+
 export default function NosotrosPage() {
   return (
-    <section className="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-24 space-y-20">
-      <div className="relative overflow-hidden rounded-3xl p-8 md:p-12 group">
-        <div className="absolute inset-0 z-0">
-          <div 
-            className="absolute inset-0 transition-transform duration-200 group-hover:scale-105"
-            style={{
-              backgroundImage: "url('/images/consultoria-politica.jpg')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/60 via-primary/40 to-secondary/80"></div>
-          <div className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          ></div>
-        </div>
+    <>
+      <section className="relative w-full h-screen md:h-[200px] overflow-hidden flex items-center justify-center">
+        <Image
+          src="/images/partenon.jpg"
+          alt="Fondo"
+          fill
+          className="object-cover grayscale absolute inset-0"
+          priority
+          sizes="100vw"
+        />
 
-        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-white/10 to-transparent rounded-full -translate-y-1/3 translate-x-1/3 blur-xl group-hover:blur-2xl transition-all duration-500" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-black/10 to-transparent rounded-full translate-y-1/3 -translate-x-1/3 blur-xl group-hover:blur-2xl transition-all duration-500" />
-        
-        {/* Elementos de diseño */}
-        <div className="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-white rounded-tr-3xl"></div>
-        <div className="absolute bottom-8 left-8 w-12 h-12 border-b-2 border-l-2 border-white rounded-bl-3xl"></div>
+        <div className="absolute inset-0 wave-texture"></div>
 
-        <div className="relative z-10 text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-md mb-10 shadow-2xl border border-white/30 group-hover:scale-105 group-hover:from-white/30 transition-all duration-100">
-            <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-inner">
-              <TeamOutlined className="text-3xl !text-white" />
-            </div>
-          </div>
-          <Title className="!text-4xl md:!text-6xl !text-white font-bold mb-10 leading-tight">
-            <span className="text-white">
-              Transformando la Política
-            </span>
-            <br />
-            <span className="text-white">
-              con Datos y Estrategia
-            </span>
-          </Title>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary via-primary/80 to-primary/70 mix-blend-multiply"></div>
 
-          {/* Contenedor de texto elegante */}
-          <div className="relative">
-            {/* Sombra exterior */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
-            
-            {/* Contenedor principal */}
-            <div className="relative bg-gradient-to-b from-white/95 to-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/40 shadow-2xl group-hover:shadow-3xl transition-all duration-300">
-              {/* Línea decorativa superior */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-              
-              <Paragraph className="!text-base md:!text-lg text-gray-800 leading-relaxed font-medium relative">
-                {/* Marcador decorativo al inicio */}
-                <span className="absolute -left-3 top-0 text-primary text-2xl">❝</span>
-                {OBJECTIVE_TEXT}
-                {/* Marcador decorativo al final */}
-                <span className="absolute -right-3 bottom-0 text-secondary text-2xl">❞</span>
-              </Paragraph>
-              
-              {/* Firma decorativa */}
-              <div className="mt-6 pt-6 border-t border-gray-200/50">
-                <div className="inline-flex items-center space-x-2">
-                  <div className="h-px w-8 bg-gradient-to-r from-primary to-secondary"></div>
-                  <span className="text-sm text-gray-600 font-semibold">POLIKRATOS Consulting</span>
-                  <div className="h-px w-8 bg-gradient-to-r from-secondary to-primary"></div>
-                </div>
-              </div>
+        <div className="relative z-10 perspective-1000">
+          <div className="flex items-center justify-center gap-8 md:gap-12">
+            <div className="logo-3d">
+              <Image
+                src="/images/blanco-transparente.png"
+                alt="Logo centrado"
+                width={300}
+                height={0}
+                style={{ height: 'auto' }}
+                priority
+              />
             </div>
             
-            {/* Elementos decorativos flotantes */}
-            <div className="absolute -top-3 -left-3 w-6 h-6 rounded-full bg-gradient-to-r from-primary to-secondary opacity-80 animate-pulse"></div>
-            <div className="absolute -bottom-3 -right-3 w-6 h-6 rounded-full bg-gradient-to-r from-secondary to-primary opacity-80 animate-pulse delay-300"></div>
-          </div>
-
-          {/* Badge de calidad */}
-          <div className="mt-10 inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30">
-            <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 animate-pulse"></div>
-            <span className="text-white/90 text-sm font-medium">Estrategia Política Basada en Datos</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="space-y-12">
-        {/* Encabezado minimalista */}
-        <div className="text-center">
-          <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-md mb-10 shadow-2xl border border-white/30 group-hover:scale-105 group-hover:from-white/30 transition-all duration-100">
-            <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-inner">
-              <BulbOutlined className="text-3xl !text-white" />
-            </div>
-          </div>
-          
-          <div className="mb-8">
-            <div className="inline-block mb-4">
-              <div className="h-1 w-16 bg-primary mx-auto mb-4"></div>
-              <Title className="!text-4xl md:!text-5xl text-primary font-bold tracking-tight">
-                Nuestra Labor
+            <div className="h-24 w-0.5 bg-white/50"></div>
+            
+            <div className="logo-3d">
+              <Title level={1} className="text-7xl md:text-7xl lg:text-7xl font-bold !text-white tracking-wider">
+                NOSOTROS
               </Title>
-              <div className="h-1 w-16 bg-primary/30 mx-auto mt-4"></div>
-            </div>
-            
-            <div className="max-w-2xl mx-auto bg-white p-6 rounded-lg border border-primary/10 shadow-sm">
-              <Paragraph className="!text-lg text-gray-700 font-medium leading-relaxed">
-                Servicios especializados que integran tecnología de vanguardia con análisis político estratégico
-              </Paragraph>
             </div>
           </div>
         </div>
 
-        {/* Grid de servicios elegante */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {LABOR_ITEMS.map((item, index) => (
-            <div key={index} className="group relative">
-              {/* Línea decorativa lateral al hover */}
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-100 rounded-r"></div>
-              <Card
-                className="!rounded-2xl !border !border-gray-200 hover:!border-primary/30 !bg-white hover:!shadow-2xl transition-all duration-300 group-hover:-translate-y-1 h-full flex flex-col"
-                styles={{
-                  body: {
-                    padding: '24px',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    position: 'relative'
-                  }
-                }}
-              >
-                {/* Número discreto con más espacio */}
-                <div className="absolute top-4 right-4 z-10">
-                  <div className="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center bg-white shadow-sm">
-                    <span className="text-sm font-bold text-primary">{index + 1}</span>
-                  </div>
+        <style jsx>{`
+          .perspective-1000 {
+            perspective: 1000px;
+          }
+
+          .logo-3d {
+            animation: float3D 8s ease-in-out infinite;
+            transform-style: preserve-3d;
+          }
+
+          @keyframes float3D {
+            0%, 100% {
+              transform: 
+                rotateX(0deg) 
+                rotateY(0deg) 
+                translateY(0);
+            }
+            25% {
+              transform: 
+                rotateX(2deg) 
+                rotateY(3deg) 
+                translateY(-10px);
+            }
+            50% {
+              transform: 
+                rotateX(0deg) 
+                rotateY(-2deg) 
+                translateY(-5px);
+            }
+            75% {
+              transform: 
+                rotateX(-1deg) 
+                rotateY(2deg) 
+                translateY(-8px);
+            }
+          }
+
+          .wave-texture {
+            background: 
+              radial-gradient(
+                circle at 30% 30%,
+                rgba(255, 255, 255, 0.1) 0%,
+                transparent 50%
+              ),
+              radial-gradient(
+                circle at 70% 70%,
+                rgba(255, 255, 255, 0.08) 0%,
+                transparent 50%
+              );
+            animation: waveMove 25s ease-in-out infinite;
+            opacity: 0.3;
+          }
+
+          @keyframes waveMove {
+            0%, 100% {
+              background-position: 0% 0%, 100% 100%;
+              background-size: 200% 200%, 150% 150%;
+            }
+            50% {
+              background-position: 100% 100%, 0% 0%;
+              background-size: 150% 150%, 200% 200%;
+            }
+          }
+        `}</style>
+      </section>
+      <section className="mx-auto max-w-5xl px-4 py-8 md:py-12 space-y-12">
+        
+        {/* Sección Objetivo - Dos columnas minimalista */}
+        <div className="my-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Columna izquierda - Título */}
+            <div className="lg:col-span-1">
+              <div className="h-full flex flex-col justify-between">
+                <div>
+                  <Title level={2} className="!text-2xl !text-primary !mb-4 !font-bold">
+                    Nuestro<br />Objetivo
+                  </Title>
+                  <div className="w-20 h-1 bg-primary mb-6"></div>
                 </div>
-
-                <div className="flex flex-col h-40">
-                  {/* Icono elegante */}
-                  <div className="mb-6">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-md shadow-lg flex items-center justify-center group-hover:scale-105 transition-all duration-200">
-                      <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-inner">
-                        <span className="text-2xl text-white">{item.icon}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Texto con altura fija */}
-                  <div className="flex-1 min-h-[120px] mb-4 pr-8"> {/* Espacio para el número */}
-                    <Paragraph className="!text-black !mb-0 !text-base md:!text-[15px] !leading-relaxed font-medium group-hover:!text-primary transition-colors duration-300 line-clamp-4">
-                      {item.text}
+                
+                <div className="mt-4">
+                  <div className="bg-primary p-4 rounded border border-primary/10">
+                    <Paragraph className="!text-sm !text-white !mb-0 !font-medium">
+                      KRATOS ES UNA CONSULTORA ESPECIALISTA EN ANÁLISIS DE DATOS
                     </Paragraph>
                   </div>
                 </div>
-              </Card>
+              </div>
             </div>
-          ))}
-        </div>
-
-
-        {/* Separador elegante */}
-        <div className="pt-8 border-t border-gray-100">
-          <div className="text-center">
-            <div className="inline-flex items-center space-x-4">
-              <div className="h-px w-20 bg-primary/20"></div>
-              <span className="text-sm text-gray-500 font-medium">
-                {LABOR_ITEMS.length} servicios especializados
-              </span>
-              <div className="h-px w-20 bg-primary/20"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* POR QUÉ ELEGIRNOS - Con efecto de transición en imagen de fondo */}
-      <div className="relative rounded-3xl overflow-hidden group">
-        <div className="absolute inset-0 z-0">
-          <div 
-            className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-            style={{
-              backgroundImage: "url('/images/elegir.jpg')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/40 to-secondary/60"></div>
-          <div className="absolute inset-0 opacity-5"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          ></div>
-        </div>
-
-        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-white/10 to-transparent rounded-full -translate-y-1/3 translate-x-1/3 blur-xl group-hover:blur-2xl transition-all duration-500" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-black/10 to-transparent rounded-full translate-y-1/3 -translate-x-1/3 blur-xl group-hover:blur-2xl transition-all duration-500" />
-        
-        <div className="absolute top-8 right-8 w-12 h-12 border-t-2 border-r-2 border-white rounded-tr-3xl"></div>
-        <div className="absolute bottom-8 left-8 w-12 h-12 border-b-2 border-l-2 border-white rounded-bl-3xl"></div>
-
-        <div className="relative p-8 md:p-12 lg:p-16 rounded-3xl z-10">
-          {/* Encabezado */}
-          <div className="text-center mb-16">
-            {/* Icono con anillo decorativo */}
-            <div className="relative inline-flex items-center justify-center mb-10">
-              <div className="absolute w-24 h-24 rounded-full border-2 border-white/30 animate-pulse"></div>
-              <div className="relative w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-xl">
-                <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-inner">
-                  <TeamOutlined className="text-2xl !text-white" />
+            
+            <div className="lg:col-span-2">
+              <div className="border-l-2 border-primary pl-6">
+                <div className="space-y-4">
+                  <Paragraph className="!text-gray-700 !text-base !leading-relaxed !mb-0">
+                    {OBJECTIVE_TEXT}
+                  </Paragraph>
+                  
+                  <div className="flex items-center gap-3 pt-4">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <div className="w-2 h-2 rounded-full bg-secondary"></div>
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <div className="flex-1 h-px bg-gray-200"></div>
+                    <Paragraph className="!text-xs !text-gray-500 !mb-0">
+                      POLIKRATOS CONSULTING
+                    </Paragraph>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
 
-            {/* Título */}
-            <div className="mb-10">
-              <Title className="!text-4xl md:!text-5xl !text-white font-bold mb-4 tracking-tight">
-                ¿Por qué elegirnos?
-              </Title>
-              <div className="w-32 h-1 bg-white/50 mx-auto rounded-full"></div>
+        <div className="space-y-8">
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-md mb-6">
+              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+                <BulbOutlined className="text-xl !text-white" />
+              </div>
             </div>
+            
+            <div className="mb-6">
+              <Title className="!text-2xl md:!text-3xl text-primary font-bold">
+                Nuestra Labor
+              </Title>
+              <div className="w-16 h-0.5 bg-primary/30 mx-auto mt-2"></div>
+              
+              <div className="max-w-xl mx-auto bg-white p-4 rounded border border-primary/10 mt-4">
+                <Paragraph className="!text-sm text-gray-700">
+                  Servicios especializados que integran tecnología de vanguardia con análisis político estratégico
+                </Paragraph>
+              </div>
+            </div>
+          </div>
 
-            {/* Descripción destacada */}
-            <div className="max-w-3xl mx-auto">
-              <div className="bg-gradient-to-r from-white/10 to-white/20 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                <div className="flex items-start">
-                  <div className="mr-4 flex-shrink-0">
-                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-md">
-                      <span className="text-white text-sm font-bold">!</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {LABOR_ITEMS.map((item, index) => (
+              <div key={index} className="group">
+                <Card
+                  className="!rounded-lg !border !border-gray-200 hover:!border-primary/20 !bg-white hover:!shadow-md transition-all duration-200 h-full"
+                  styles={{
+                    body: {
+                      padding: '16px',
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column'
+                    }
+                  }}
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <span className="text-primary text-sm">{item.icon}</span>
+                    </div>
+                    
+                    <div className="flex-1">
+                      <div className="text-xs text-gray-500 mb-1">#{index + 1}</div>
+                      <Paragraph className="!text-xs md:!text-sm !text-black !mb-0 !leading-relaxed">
+                        {item.text}
+                      </Paragraph>
                     </div>
                   </div>
-                  <Paragraph className="!text-white !text-base md:!text-lg font-medium !mb-0 leading-relaxed">
-                    Porque hoy los datos mandan. En{" "}
-                    <span className="font-bold text-white drop-shadow-sm">
-                      POLIKRATOS Consulting
-                    </span>{" "}
-                    transformamos información en estrategia con tecnología, visión y
-                    acción.
-                  </Paragraph>
-                </div>
+                </Card>
               </div>
-            </div>
+            ))}
           </div>
 
-          {/* Grid de razones con diseño mejorado */}
-          <Row gutter={[24, 24]}>
-            {WHY_US.map((item, index) => (
-              <Col xs={24} md={8} key={index}>
-                <div className="group h-full">
-                  <Card
-                    className="!rounded-2xl !border-0 !shadow-xl hover:!shadow-2xl transition-all duration-500 h-full group-hover:-translate-y-1"
-                    styles={{
-                      body: { padding: 0, height: "100%" },
-                    }}
-                  >
-                    {/* Tarjeta con gradiente sutil */}
-                    <div className="h-full flex flex-col bg-gradient-to-b from-white/95 via-white to-white/90 rounded-2xl p-8 border border-white/50">
-                      {/* Encabezado de tarjeta */}
-                      <div className="flex flex-col items-center mb-8">
-                        {/* Contenedor de icono con anillo */}
-                        <div className="relative mb-6">
-                          <div className="absolute -inset-3 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-                          <div className="relative w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-lg">
-                            <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center">
-                              <span className="text-primary text-xl">
-                                {item.icon}
-                              </span>
-                            </div>
-                          </div>
+          <div className="pt-4 border-t border-gray-100">
+            <div className="text-center">
+              <span className="text-xs text-gray-500">
+                {LABOR_ITEMS.length} servicios especializados
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="my-12">
+          <div className="mb-10">
+            <div className="flex items-center gap-4">
+              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                <TeamOutlined className="!text-white text-sm" />
+              </div>
+              <Title level={2} className="!text-2xl !text-WHITE !mb-0 !font-bold">
+                ¿Por qué elegirnos?
+              </Title>
+            </div>
+            <div className="w-24 h-1 bg-primary mt-4"></div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-1">
+              <div className="relative h-64 lg:h-full rounded-lg overflow-hidden">
+                <Image
+                  src="/images/elegir.jpg"
+                  alt="Por qué elegirnos"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-2">
+              <div className="space-y-6">
+                <div className="mb-8">
+                  <Paragraph className="!text-gray-700 !text-base !mb-0">
+                    <span className="font-bold text-primary">Porque hoy, los datos mandan.</span> En{" "}
+                    <span className="font-bold text-primary">POLIKRATOS Consulting</span>{" "}
+                    transformamos información en estrategia con tecnología, visión y acción. 
+                    Somos la diferencia inteligente.
+                  </Paragraph>
+                </div>
+
+                <div className="space-y-6">
+                  {WHY_US.map((item, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                          <div className="w-2 h-2 rounded-full bg-white"></div>
                         </div>
-
-                        {/* Título */}
-                        <Title
-                          level={4}
-                          className="!text-primary !mb-0 !text-xl text-center font-bold"
-                        >
-                          {item.title}
-                        </Title>
                       </div>
-
-                      {/* Descripción */}
-                      <div className="flex-1 mb-8">
-                        <Paragraph className="!text-gray-700 !text-base !leading-relaxed text-center font-medium">
+                      
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-1">
+                          <div className="w-8 h-8 rounded bg-primary flex items-center justify-center">
+                            <span className="text-white text-sm">{item.icon}</span>
+                          </div>
+                          <Title level={4} className="!text-primary !mb-0 !text-base font-bold">
+                            {item.title}
+                          </Title>
+                        </div>
+                        
+                        <Paragraph className="!text-gray-700 !text-sm !mb-0 ml-11">
                           {item.description}
                         </Paragraph>
                       </div>
-
-                      {/* Indicador de hover */}
-                      <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-                      </div>
                     </div>
-                  </Card>
+                  ))}
                 </div>
-              </Col>
-            ))}
-          </Row>
 
-          {/* Pie de sección */}
-          <div className="text-center mt-16 pt-8 border-t border-white/20">
-            <div className="inline-flex items-center space-x-4">
-              <div className="h-px w-12 bg-gradient-to-r from-transparent to-white/40"></div>
-              <span className="text-sm text-white/90 font-medium">
-                {WHY_US.length} razones para confiar en nuestro expertise
-              </span>
-              <div className="h-px w-12 bg-gradient-to-r from-white/40 to-transparent"></div>
+                <div className="pt-6 mt-6 border-t border-gray-200">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1">
+                      <div className="w-1 h-1 rounded-full bg-primary"></div>
+                      <div className="w-1 h-1 rounded-full bg-secondary"></div>
+                      <div className="w-1 h-1 rounded-full bg-primary"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="my-12">
+          <div className="mb-10">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                <TeamOutlined className="!text-white text-sm" />
+              </div>
+              <Title level={2} className="!text-2xl !text-primary !mb-0 !font-bold">
+                Instituciones Aliadas
+              </Title>
+            </div>
+            <div className="w-24 h-1 bg-primary mb-6"></div>
+            
+            <div className="max-w-xl">
+              <div className="border-l-2 border-primary pl-4 py-2">
+                <Paragraph className="!text-gray-700 !text-sm !mb-0 italic">
+                  "El hombre nada puede aprender, sino en virtud de lo que sabe."
+                </Paragraph>
+                <Paragraph className="!text-primary !text-xs !mb-0 !mt-1">
+                  — Aristóteles
+                </Paragraph>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {ALLIES.map((ally, index) => (
+              <div key={index} className="group h-full">
+                <div className="h-full border border-gray-300 rounded-lg p-6 hover:border-primary/30 transition-all duration-200">
+                  <div className="flex justify-center mb-4">
+                    <div className="relative w-20 h-20">
+                      <Image
+                        src={ally.image}
+                        alt={ally.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+
+                  <Title level={3} className="!text-primary !text-center !text-lg !mb-3 font-bold">
+                    {ally.name}
+                  </Title>
+
+                  <div className="mb-4">
+                    <Paragraph className="!text-gray-700 !text-sm !text-center !leading-relaxed !mb-0">
+                      {ally.description}
+                    </Paragraph>
+                  </div>
+
+                  <div className="w-12 h-0.5 bg-primary/30 mx-auto my-4"></div>
+
+                  <div className="text-center">
+                    <Paragraph className="!text-gray-600 !text-xs !mb-0">
+                      {ally.fullName}
+                    </Paragraph>
+                  </div>
+
+                  <div className="flex justify-center mt-4">
+                    <div className="flex items-center gap-1">
+                      <div className="w-1 h-1 rounded-full bg-primary"></div>
+                      <div className="w-1 h-1 rounded-full bg-secondary"></div>
+                      <div className="w-1 h-1 rounded-full bg-primary"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 pt-6 border-t border-gray-200">
+            <div className="text-center">
+              <Paragraph className="!text-sm !text-gray-500 !mb-0">
+                Alianzas estratégicas para resultados excepcionales
+              </Paragraph>
+            </div>
+          </div>
+        </div>
+
+        <div className="my-12">
+  <div className="mb-10">
+    <div className="flex items-center gap-4 mb-6">
+      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+        <GlobalOutlined className="!text-white text-sm" />
+      </div>
+      <Title level={2} className="!text-2xl !text-primary !mb-0 !font-bold">
+        Aliados Internacionales Estratégicos
+      </Title>
+    </div>
+    <div className="w-24 h-1 bg-primary mb-6"></div>
+  </div>
+
+  {/* Miembros internacionales */}
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {MEMBERS.map((member, index) => (
+      <div key={index} className="group">
+        <div className="h-full border border-gray-200 rounded-lg p-6 hover:border-primary/30 transition-all duration-200">
+          {/* Foto del miembro */}
+          <div className="flex justify-center mb-4">
+            <div className="relative">
+              <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-primary">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+              
+              {/* Bandera */}
+              <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full border-2 border-white bg-white overflow-hidden">
+                <div className="relative w-full h-full">
+                  <Image
+                    src={member.country}
+                    alt="Bolivia"
+                    fill
+                    sizes="40px"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Nombre */}
+          <Title level={3} className="!text-primary !text-center !text-lg !mb-2 font-bold">
+            {member.name}
+          </Title>
+
+          {/* Cargo */}
+          <div className="mb-4">
+            <Paragraph className="!text-gray-700 !text-sm !text-center !leading-relaxed !mb-0">
+              {member.description}
+            </Paragraph>
+          </div>
+
+          {/* Separador */}
+          <div className="w-16 h-0.5 bg-primary/30 mx-auto my-4"></div>
+
+          {/* Indicador */}
+          <div className="flex justify-center">
+            <div className="flex items-center gap-1">
+              <div className="w-1 h-1 rounded-full bg-primary"></div>
+              <div className="w-1 h-1 rounded-full bg-secondary"></div>
+              <div className="w-1 h-1 rounded-full bg-primary"></div>
             </div>
           </div>
         </div>
       </div>
-      
-      {/* ALIADOS */}
-      <div className="space-y-10">
-        <div className="text-center">
-  {/* Icono con diseño idéntico a Nuestra Labor */}
-  <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-md mb-10 shadow-2xl border border-white/30 group-hover:scale-105 group-hover:from-white/30 transition-all duration-100">
-    <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-inner">
-      <TeamOutlined className="text-3xl !text-white" />
-    </div>
+    ))}
   </div>
-  
-  <div className="mb-8">
-    <div className="inline-block mb-4">
-      <div className="h-1 w-16 bg-primary mx-auto mb-4"></div>
-      <Title className="!text-4xl md:!text-5xl text-primary font-bold tracking-tight">
-        Nuestros Aliados
-      </Title>
-      <div className="h-1 w-16 bg-primary/30 mx-auto mt-4"></div>
-    </div>
-    
-    <div className="max-w-2xl mx-auto bg-white p-6 rounded-lg border border-primary/10 shadow-sm">
-      <Paragraph className="!text-lg text-gray-700 font-medium leading-relaxed">
-        "El hombre nada puede aprender, sino en virtud de lo que sabe."
-        <br /><span className="text-primary font-semibold">— Aristóteles</span>
+
+  {/* Separador final */}
+  <div className="mt-10 pt-6 border-t border-gray-200">
+    <div className="text-center">
+      <Paragraph className="!text-sm !text-gray-500 !mb-0">
+        Expertos en estrategia política internacional
       </Paragraph>
     </div>
   </div>
 </div>
 
-
-        <Row gutter={[24, 24]}>
-          {ALLIES.map((ally, index) => (
-            <Col xs={24} md={8} key={index}>
-              <div className="group h-full">
-                <Card
-                  className="!rounded-2xl !border-0 !shadow-lg hover:!shadow-2xl transition-all duration-500 h-full group-hover:-translate-y-1"
-                  styles={{
-                    body: { 
-                      padding: 0,
-                      height: '100%'
-                    }
-                  }}
-                >
-                  {/* Tarjeta con fondo primary */}
-                  <div className="h-full flex flex-col bg-primary rounded-2xl p-8 text-white">
-                    
-                    {/* Contenedor de imagen circular */}
-                    <div className="flex flex-col items-center mb-8">
-                      <div className="relative mb-6">
-                        {/* Anillo decorativo exterior */}
-                        <div className="absolute -inset-4 bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        
-                        {/* Círculo para la imagen */}
-                        <div className="relative w-36 h-36 rounded-full border-4 border-white/30 bg-white overflow-hidden shadow-xl group-hover:border-white/50 transition-colors duration-300">
-                          {/* Overlay para mejorar contraste */}
-                          <div className="absolute inset-0 bg-primary/10 z-10"></div>
-                          
-                          {/* Imagen que rellena completamente el círculo */}
-                          <div className="relative w-full h-full">
-                            <Image
-                              src={ally.image}
-                              alt={ally.name}
-                              fill
-                              sizes="(max-width: 768px) 100vw, 33vw"
-                              className="object-cover object-center p-2"
-                              priority={index < 2}
-                            />
-                          </div>
-                          
-                          {/* Borde decorativo interior */}
-                          <div className="absolute inset-0 rounded-full border-2 border-white/20"></div>
-                        </div>
-                      </div>
-
-                      {/* Línea decorativa */}
-                      <div className="w-20 h-1 bg-white/30 rounded-full mb-4"></div>
-                      
-                      {/* Nombre del aliado */}
-                      <Title level={3} className="!text-white !mb-2 !text-2xl font-bold">
-                        {ally.name}
-                      </Title>
-                    </div>
-
-                    {/* Descripción */}
-                    <div className="flex-1 mb-6">
-                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20">
-                        <Paragraph className="!text-white !text-base !leading-relaxed font-medium text-center">
-                          {ally.description}
-                        </Paragraph>
-                      </div>
-                    </div>
-
-                    {/* Separador decorativo */}
-                    <div className="pt-6 border-t border-white/30 group-hover:border-white/50 transition-colors duration-300">
-                      <div className="flex items-center justify-center space-x-2 mb-4">
-                        <div className="w-2 h-2 rounded-full bg-white"></div>
-                        <div className="w-8 h-1 bg-white/50 rounded-full"></div>
-                        <div className="w-2 h-2 rounded-full bg-white"></div>
-                      </div>
-
-                      {/* Nombre completo */}
-                      <div className="text-center">
-                        <div className="bg-white/5 rounded-lg p-3 border border-white/10 group-hover:border-white/20 transition-colors duration-300">
-                          <Paragraph className="!text-white/90 !text-sm !mb-0 font-medium italic">
-                            {ally.fullName}
-                          </Paragraph>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Indicador de hover */}
-                    <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="w-3 h-3 rounded-full bg-white animate-pulse"></div>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-            </Col>
-          ))}
-        </Row>
-      </div>
-
-      <div className="text-center pt-12">
-        <div className="h-1 w-32 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full mb-8"></div>
-        <Paragraph className="!text-secondary/70 italic max-w-2xl mx-auto">
-          En POLIKRATOS Consulting, combinamos el arte de la política con la ciencia de los datos para construir estrategias ganadoras.
-        </Paragraph>
-      </div>
-    </section>
+        <div className="text-center pt-8">
+          <div className="w-20 h-0.5 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full mb-6"></div>
+          <Paragraph className="!text-secondary/70 !text-xs italic max-w-xl mx-auto">
+            En POLIKRATOS Consulting, combinamos el arte de la política con la ciencia de los datos para construir estrategias ganadoras.
+          </Paragraph>
+        </div>
+      </section>
+    </>
   );
 }
