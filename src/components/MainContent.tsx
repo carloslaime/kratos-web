@@ -32,7 +32,7 @@ export default function MainContent() {
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/10 rounded-full">
                 <RiStarFill className="text-primary text-sm" />
-                <span className="text-xs font-semibold text-primary">Líderes en Estrategia Política</span>
+                <span className="text-xs font-semibold text-primary">Líderes en Estrategias Digitales</span>
               </div>
 
               <Title

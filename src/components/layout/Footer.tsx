@@ -7,7 +7,7 @@ import { Typography } from "antd";
 const { Title } = Typography;
 export default function Footer() {
 
-  const address = "Calle 21 de Mayo #2033, Casi esquina Andrés Ibáñez";
+  const address = "Calle 21 de Mayo #283, Edificio Kratos";
   const cellphone = "+591 77694976 - +591 77924704";
   const email = "polikratosconsulting@gmail.com";
 
@@ -48,7 +48,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/20 mt-4 py-3 text-center text-xs">
-        © {new Date().getFullYear()} Poli Kratos Consulting S.R.L. Todos los derechos reservados.
+        © {new Date().getFullYear()} POLIKRATOS Consulting S.R.L. Todos los derechos reservados.
       </div>
     </footer>
   );
