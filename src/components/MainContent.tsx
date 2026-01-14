@@ -520,6 +520,163 @@ export default function MainContent() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-4 py-16">
+        <div className="relative rounded-2xl overflow-hidden shadow-xl">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/partenon.jpg"
+              alt="Fondo"
+              fill
+              className="object-cover grayscale"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-primary mix-blend-multiply"></div>
+          </div>
+
+          <div className="relative z-10">
+            <div className="text-center p-8 md:p-10">
+              <Title level={1} className="text-3xl md:text-4xl lg:text-4xl font-bold !text-white mb-4">
+                PAÍSES EN LOS QUE ESTAMOS PRESENTES
+              </Title>
+            </div>
+
+            <div className="px-6 md:px-10 pb-6">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+                
+                <div className="flex flex-col items-center group flex-1">
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white/40 shadow-lg mb-4 flag-animation">
+                    <Image
+                      src="/images/paises/bolivia.webp"
+                      alt="Bolivia"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      sizes="(max-width: 128px) 100vw, 128px"
+                    />
+                  </div>
+                  <span className="text-white font-bold text-xl">Bolivia</span>
+                </div>
+
+                <div className="hidden md:block">
+                  <div className="w-px h-24 bg-white/30"></div>
+                </div>
+
+                <div className="flex flex-col items-center group flex-1">
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white/40 shadow-lg mb-4 flag-animation">
+                    <Image
+                      src="/images/paises/peru.png"
+                      alt="Perú"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      sizes="(max-width: 128px) 100vw, 128px"
+                    />
+                  </div>
+                  <span className="text-white font-bold text-xl">Perú</span>
+                </div>
+
+                <div className="hidden md:block">
+                  <div className="w-px h-24 bg-white/30"></div>
+                </div>
+
+                <div className="flex flex-col items-center group flex-1">
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white/40 shadow-lg mb-4 flag-animation animation-delay-300">
+                    <Image
+                      src="/images/paises/argentina.webp"
+                      alt="Argentina"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      sizes="(max-width: 128px) 100vw, 128px"
+                    />
+                  </div>
+                  <span className="text-white font-bold text-xl">Argentina</span>
+                </div>
+
+                <div className="hidden md:block">
+                  <div className="w-px h-24 bg-white/30"></div>
+                </div>
+
+                <div className="flex flex-col items-center group flex-1">
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white/40 shadow-lg mb-4 flag-animation animation-delay-600">
+                    <Image
+                      src="/images/paises/brasil.webp"
+                      alt="Brasil"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      sizes="(max-width: 128px) 100vw, 128px"
+                    />
+                  </div>
+                  <span className="text-white font-bold text-xl">Brasil</span>
+                </div>
+
+                <div className="hidden md:block">
+                  <div className="w-px h-24 bg-white/30"></div>
+                </div>
+
+                {/* España */}
+                <div className="flex flex-col items-center group flex-1">
+                  <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white/40 shadow-lg mb-4 flag-animation animation-delay-900">
+                    <Image
+                      src="/images/paises/españa.png"
+                      alt="España"
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      sizes="(max-width: 128px) 100vw, 128px"
+                    />
+                  </div>
+                  <span className="text-white font-bold text-xl">España</span>
+                </div>
+
+              </div>
+            </div>
+            <div className="text-center p-5 md:p-5">
+              <Paragraph className="text-2xl md:text-2xl !text-white/90 max-w-2xl mx-auto">
+                Campañas Digitales en múltiples países de Latinoamérica y Europa
+              </Paragraph>
+            </div>
+          </div>
+        </div>
+
+        <style jsx>{`
+          .flag-animation {
+            animation: floatFlag 6s ease-in-out infinite;
+          }
+
+          @keyframes floatFlag {
+            0%, 100% {
+              transform: translateY(0) rotate(0deg);
+            }
+            50% {
+              transform: translateY(-12px) rotate(3deg);
+            }
+          }
+
+          .animation-delay-300 {
+            animation-delay: 0.3s;
+          }
+
+          .animation-delay-600 {
+            animation-delay: 0.6s;
+          }
+
+          .animation-delay-900 {
+            animation-delay: 0.9s;
+          }
+
+          .group:hover .flag-animation {
+            animation: pulseFlag 0.6s ease-in-out;
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.25);
+          }
+
+          @keyframes pulseFlag {
+            0%, 100% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.08);
+            }
+          }
+        `}</style>
+      </section>
+
       <section className="mx-auto max-w-4xl px-4 py-12 text-center">
         <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full -translate-y-24 translate-x-24" />
