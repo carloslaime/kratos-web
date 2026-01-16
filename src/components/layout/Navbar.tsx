@@ -109,6 +109,13 @@ export default function Navbar() {
             >
               Contacto
             </Link>
+            <Link 
+              href="/informes" 
+              className="px-5 py-3 hover:bg-white/20 transition-colors duration-200 text-white text-sm"
+              onClick={toggleMenu}
+            >
+              Informes
+            </Link>
           </div>
         </div>
       </div>
