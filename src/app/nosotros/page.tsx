@@ -117,21 +117,21 @@ const MEMBERS = [
     country: "/images/paises/bolivia.webp"
   },
   {
+    name: "Alexander Maldonado",
+    description: "Gerente Administrativo - Consultor Político",
+    image: "/images/miembros/alexandermaldonado.jpg",
+    country: "/images/paises/bolivia.webp"
+  },
+  {
     name: "Lic. Sergio Vega",
     description: "DIrector Institucional - Presidente del Colegio de Politólogos Santa Cruz",
     image: "/images/miembros/sergiovega.jpg",
     country: "/images/paises/bolivia.webp"
   },
   {
-    name: "Cnl. Humberto Echalar",
-    description: "Asesor Político - Ex viceministro de gobierno",
-    image: "/images/miembros/humbertoechalar.jpg",
-    country: "/images/paises/bolivia.webp"
-  },
-  {
-    name: "Lic. Luis Serrate",
-    description: "Consultor Político",
-    image: "/images/miembros/luisserrate.jpg",
+    name: "Ruben Darío Alarcón",
+    description: "Director de Imagen Pública",
+    image: "/images/miembros/rubenalarcon.jpg",
     country: "/images/paises/bolivia.webp"
   },
   {
@@ -144,6 +144,18 @@ const MEMBERS = [
     name: "Lic. Raul Alfonsin",
     description: "Director de Asuntos Jurídicos - Consultor Jurídico",
     image: "/images/miembros/raulalfonsin.jpg",
+    country: "/images/paises/bolivia.webp"
+  },
+  {
+    name: "Cnl. Humberto Echalar",
+    description: "Asesor Político - Ex viceministro de gobierno",
+    image: "/images/miembros/humbertoechalar.jpg",
+    country: "/images/paises/bolivia.webp"
+  },
+  {
+    name: "Lic. Luis Serrate",
+    description: "Consultor Político",
+    image: "/images/miembros/luisserrate.jpg",
     country: "/images/paises/bolivia.webp"
   },
 ]
