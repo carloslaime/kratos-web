@@ -60,6 +60,12 @@ export default function Navbar() {
             >
                 Contacto
             </Link>
+            <Link
+                href="/informes"
+                className="px-5 py-2.5 rounded hover:bg-white/20 transition-colors duration-200 text-sm"
+            >
+                Informes
+            </Link>
         </nav>
 
 				<button
