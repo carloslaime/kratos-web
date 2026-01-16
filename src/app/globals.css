@@ -19,3 +19,245 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Animaciones para imágenes circulares */
+@keyframes image-rotate-front {
+  0%, 45% {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+    z-index: 20;
+  }
+  50%, 95% {
+    opacity: 0;
+    transform: rotateY(180deg) scale(0.8);
+    z-index: 10;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(360deg) scale(1);
+    z-index: 20;
+  }
+}
+
+@keyframes image-rotate-back {
+  0%, 45% {
+    opacity: 0;
+    transform: rotateY(180deg) scale(0.8);
+    z-index: 10;
+  }
+  50%, 95% {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+    z-index: 20;
+  }
+  100% {
+    opacity: 0;
+    transform: rotateY(180deg) scale(0.8);
+    z-index: 10;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-slow-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes shadow-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateX(-50%) scale(0.95);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-image-rotate-front {
+  animation: image-rotate-front 8s ease-in-out infinite;
+}
+
+.animate-image-rotate-back {
+  animation: image-rotate-back 8s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 15s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 12s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-shadow-pulse {
+  animation: shadow-pulse 3s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 1s ease-in-out infinite;
+}
+
+/* Animaciones para la sección dinámica */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-8px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(-4px) rotate(240deg);
+  }
+}
+
+/* Clases de animación */
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Efectos de transición */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+.duration-700 {
+  transition-duration: 700ms;
+}
+
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+
+/* Asegurar que el círculo recorte el contenido */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Efecto de máscara circular para el icono */
+.circle-mask {
+  mask-image: radial-gradient(circle, white 100%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle, white 100%, transparent 100%);
+}
+
+/* Animación de pulso para los puntos */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Asegurar que el círculo exterior sea perfecto */
+.rounded-full {
+  border-radius: 9999px;
+}
+
+/* Transiciones suaves para el recorte */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
