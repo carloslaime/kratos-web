@@ -11,9 +11,9 @@ export default function Footer() {
   const email = "polikratosconsulting@gmail.com";
   
   const socialLinks = {
-    instagram: "https://instagram.com/tu_perfil",
-    facebook: "https://facebook.com/tu_perfil",
-    tiktok: "https://tiktok.com/@tu_perfil"
+    instagram: "https://www.instagram.com/polikratos_consulting?igsh=bTM3ODN1Zzk4Y3cy&utm_source=qr",
+    facebook: "https://www.facebook.com/share/16o5QGznqs/?mibextid=LQQJ4d",
+    tiktok: "https://www.tiktok.com/@polikratosconsulting?_r=1&_t=ZM-937YKgBCssF"
   };
 
   return (
