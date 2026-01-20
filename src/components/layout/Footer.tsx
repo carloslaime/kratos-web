@@ -5,10 +5,10 @@ import Image from "next/image";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
-  const address = "Calle 21 de Mayo #283, Edificio Kratos";
+  const address = "Calle 21 de Mayo #683, Edificio Kratos";
   const mapsUrl = "https://www.google.com/maps/search/?api=1&query=Calle+21+de+Mayo+683";
-  const cellphone = "+591 77694976 - +591 77924704";
-  const email = "polikratosconsulting@gmail.com";
+  const cellphone = "+591 77924704";
+  const email = "polikratos.srl@gmail.com";
   
   const socialLinks = {
     instagram: "https://www.instagram.com/polikratos_consulting?igsh=bTM3ODN1Zzk4Y3cy&utm_source=qr",

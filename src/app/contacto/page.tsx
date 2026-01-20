@@ -9,10 +9,10 @@ const { Title, Paragraph } = Typography;
 
 export default function ContactoPage() {
   const contactInfo = {
-    address: "Calle 21 de Mayo #2033, Casi esquina Andrés Ibáñez",
-    cellphone: "+591 77694976",
-    whatsapp: "+591 77694976",
-    email: "polikratosconsulting@gmail.com",
+    address: "Calle 21 de Mayo #683, Casi esquina Andrés Ibáñez",
+    cellphone: "+591 77924704",
+    whatsapp: "+591 77924704",
+    email: "polikratos.srl@gmail.com",
     hours: "Lunes a Viernes: 9:00 AM - 6:00 PM",
     businessName: "Polikratos Consulting S.R.L."
   };

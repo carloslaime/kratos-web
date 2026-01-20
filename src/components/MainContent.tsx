@@ -1,17 +1,20 @@
 "use client"
 
-import { Button, Typography, Card } from "antd";
+import { Button, Typography, Card, Avatar, Rate } from "antd";
 import Image from 'next/image'
-import { FaChartLine, FaBullseye, FaUsers, FaChevronRight } from "react-icons/fa";
+import { 
+  FaChartLine, FaBullseye, FaUsers, FaChevronRight, 
+  FaGavel, FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import { RiStarFill, RiArrowRightLine } from "react-icons/ri";
-
+import { useRouter } from "next/navigation";
+import { useRef } from "react";
 const { Title, Paragraph } = Typography;
 
 export default function MainContent() {
 
-  const cellphone = "59177694976";
+  const cellphone = "59177924704";
   const message =
-    "Hola, estoy interesado en solicitar una asesoría, ¿me puede brindar más información por favor?.";
+    "Hola, estoy interesado en solicitar sus servicios, ¿me puede brindar más información por favor?.";
 
   const handleConsultationClick = () => {
     const encodedMessage = encodeURIComponent(message);
@@ -19,6 +22,38 @@ export default function MainContent() {
 
     window.open(url, "_blank", "noopener,noreferrer");
   };
+
+  const router = useRouter();
+  const handleConocerMas = () => {
+    router.push("/servicios");
+  }
+
+  const testimonials = [
+    {
+      content: "El equipo demostró un entendimiento profundo del panorama político digital. Su estrategia fue clave para conectar con votantes jóvenes sin comprometer nuestro mensaje principal.",
+      role: "Candidato Presidencial",
+      country: "Bolivia",
+      rating: 5
+    },
+    {
+      content: "La precisión en el análisis de datos nos permitió ajustar nuestra campaña en tiempo real. Los resultados superaron todas las expectativas de nuestro equipo interno.",
+      role: "Ex Candidato Presidencial",
+      country: "Bolivia",
+      rating: 5
+    },
+    {
+      content: "Su enfoque estratégico transformó nuestra comunicación digital. Logramos aumentar nuestra visibilidad en redes sociales manteniendo una imagen coherente y profesional.",
+      role: "Candidata Presidencial",
+      country: "Europa",
+      rating: 4
+    },
+    {
+      content: "La combinación de análisis técnico y comprensión política fue invaluable. Nos ayudaron a navegar situaciones complejas con respuestas estratégicas efectivas.",
+      role: "Asesor de Campaña Presidencial",
+      country: "Sudamérica",
+      rating: 5
+    }
+  ];
 
   return (
     <>
@@ -273,6 +308,83 @@ export default function MainContent() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-4 py-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-3xl opacity-50 blur-xl group-hover:opacity-70 transition-opacity duration-500"></div>
+
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-primary/20 bg-white">
+              <video
+                className="w-full aspect-video object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700"
+                controls
+                preload="metadata"
+                poster="/images/gris-bg-blanco.jpg"
+                aria-label="Video de presentación de Poli Kratos - Transformando datos en estrategias políticas"
+              >
+                <source src="/videos/kratos-presentacion.mp4" type="video/mp4" />
+                Tu navegador no soporta el elemento de video.
+              </video>
+            </div>
+
+            <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-secondary/30 animate-pulse"></div>
+            <div
+              className="absolute -bottom-2 -left-2 w-4 h-4 rounded-full bg-primary/30 animate-pulse"
+              style={{ animationDelay: "0.5s" }}
+            ></div>
+          </div>
+
+          <div className="relative">
+            <div className="relative mb-4">
+              <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-primary rounded-full animate-pulse-slow opacity-60"></div>
+              <Title
+                level={2}
+                className="!text-2xl md:!text-3xl lg:!text-4xl font-bold pl-6"
+              >
+                <span className="text-primary block">Mira Cómo</span>
+                <span className="text-secondary block mt-2">
+                  Transformamos Datos en Impacto
+                </span>
+              </Title>
+            </div>
+
+            <div className="relative pl-6">
+              <div className="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-primary/30 to-secondary/30 rounded-full"></div>
+              <Paragraph className="text-secondary/80 text-sm md:text-base leading-relaxed max-w-lg">
+                En este video, descubrirás nuestra metodología única que combina
+                <span className="font-semibold text-primary"> análisis de datos</span>,
+                <span className="font-semibold text-secondary">
+                  {" "}
+                  estrategia política
+                </span>{" "}
+                y
+                <span className="font-semibold text-primary">
+                  {" "}
+                  tecnología digital
+                </span>{" "}
+                para crear campañas que realmente conectan con los votantes.
+              </Paragraph>
+            </div>
+
+            <div className="flex items-center gap-3 mt-6 pl-6">
+              <div className="flex items-center gap-1">
+                <div className="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
+                <div
+                  className="w-2 h-2 rounded-full bg-primary animate-pulse"
+                  style={{ animationDelay: "0.2s" }}
+                ></div>
+                <div
+                  className="w-2 h-2 rounded-full bg-secondary animate-pulse"
+                  style={{ animationDelay: "0.4s" }}
+                ></div>
+              </div>
+              <span className="text-xs text-secondary/60 font-medium">
+                Duración: 2-3 minutos • HD
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-6xl px-4 py-12">
         <div className="text-center mb-12">
           <Title
@@ -286,7 +398,7 @@ export default function MainContent() {
           </Paragraph>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-4 gap-12">
           {[
             {
               icon: <FaChartLine />,
@@ -297,7 +409,7 @@ export default function MainContent() {
             },
             {
               icon: <FaBullseye />,
-              title: "Estrategias Políticas",
+              title: "Estrategias Digitales",
               description: "Soluciones integrales para candidatos, autoridades partidos e instituciones.",
               hoverColor: "primary",
               delay: "0.1s"
@@ -306,6 +418,13 @@ export default function MainContent() {
               icon: <FaUsers />,
               title: "Comunicación Política",
               description: "Discursos poderosos, narrativas coherentes y campañas que conectan emocionalmente con tu audiencia.",
+              hoverColor: "primary",
+              delay: "0.2s"
+            },
+            {
+              icon: <FaGavel />,
+              title: "Servicios Jurídicos",
+              description: "Brindamos asesorías legales en diversas áreas: constitucional, penal, civil, familiar y laboral.",
               hoverColor: "primary",
               delay: "0.2s"
             }
@@ -368,6 +487,7 @@ export default function MainContent() {
                 
                 <button
                   className={`flex items-center gap-1 text-sm font-semibold text-${service.hoverColor} p-2 rounded-lg group-hover:bg-${service.hoverColor}/10 transition-all duration-500 group-hover:gap-3 group-hover:px-4`}
+                  onClick={handleConocerMas}
                 >
                   <span className="relative">
                     Conocer más
@@ -519,6 +639,99 @@ export default function MainContent() {
           </div>
         </div>
       </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-16">
+      <div className="text-center mb-12">        
+        <Title
+            level={2}
+            className="!text-2xl md:!text-3xl lg:!text-4xl !text-primary font-bold mb-3"
+          >
+            Voces de Liderazgo Político
+        </Title>
+        
+        <p className="text-base md:text-lg text-secondary/70 max-w-2xl mx-auto">
+          Testimonios anónimos de figuras políticas que han transformado su comunicación digital
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {testimonials.map((testimonial, index) => (
+          <Card
+            key={index}
+            className={`
+              !border !border-gray-200 !rounded-xl !shadow-sm
+              hover:!shadow-xl hover:!border-primary/20 
+              transition-all duration-500
+              group relative overflow-hidden
+              h-full
+            `}
+            hoverable
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            
+            <div className="absolute top-4 right-4 text-primary/20 group-hover:text-primary/40 transition-colors duration-500">
+              <FaQuoteLeft size={24} />
+            </div>
+
+            <div className="relative z-10">
+              <div className="mb-4">
+                <Rate 
+                  disabled 
+                  defaultValue={testimonial.rating} 
+                  character={<RiStarFill className="text-sm" />}
+                  className="text-secondary [&>.ant-rate-star-full>div>span>svg]:text-secondary"
+                />
+              </div>
+
+              <div className="mb-6">
+                <p className="text-secondary/80 italic text-sm leading-relaxed">
+                  "{testimonial.content}"
+                </p>
+              </div>
+
+              <div className="absolute bottom-15 left-4 text-primary/20 group-hover:text-primary/40 transition-colors duration-500">
+                <FaQuoteRight size={20} />
+              </div>
+
+              <div className="border-t border-gray-100 pt-4 mt-4">
+                <div className="flex items-center gap-3">
+                  <Avatar 
+                    size="large"
+                    className={`
+                      bg-gradient-to-r from-primary to-secondary
+                      text-white font-bold
+                      group-hover:scale-110 transition-transform duration-500
+                    `}
+                  >
+                    {testimonial.role.charAt(0)}
+                  </Avatar>
+                  
+                  <div>
+                    <div className="text-sm font-semibold text-primary">
+                      {testimonial.role}
+                    </div>
+                    <div className="text-xs text-secondary/60">
+                      {testimonial.country}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-500"></div>
+          </Card>
+        ))}
+      </div>
+
+      <div className="text-center mt-10">
+        <div className="inline-flex items-center gap-2 text-xs text-secondary/50 bg-secondary/5 px-4 py-2 rounded-full">
+          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+          </svg>
+          <span>Los testimonios se presentan de forma anónima para proteger la privacidad y confidencialidad de nuestros clientes.</span>
+        </div>
+      </div>
+    </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16">
         <div className="relative rounded-2xl overflow-hidden shadow-xl">
