@@ -1,7 +1,7 @@
 "use client";
 
 import { Typography, Card, Row, Col, Modal } from "antd";
-import { FilePdfOutlined, EyeOutlined, DownloadOutlined, FileOutlined } from "@ant-design/icons";
+import { FilePdfOutlined, EyeOutlined, DownloadOutlined, FileOutlined, DashboardOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import Image from "next/image";
 
@@ -34,8 +34,57 @@ const DOCS = [
   },
 ];
 
+const dashboard = [
+  {
+    "image": "angelica-perfilamiento.png"
+  },
+  {
+    "image": "angelica-polaridad.png"
+  },
+  {
+    "image": "cluster-publicaciones1.png"
+  },
+  {
+    "image": "cluster-publicaciones2.png"
+  },
+  {
+    "image": "cluster-seguidores.png"
+  },
+  {
+    "image": "dashboard1.png"
+  },
+  {
+    "image": "dashboard2.png"
+  },
+  {
+    "image": "edman-lara-estudio.png"
+  },
+  {
+    "image": "medios.png"
+  },
+  {
+    "image": "perfilamiento.png"
+  },
+  {
+    "image": "polaridad-provincias.png"
+  },
+  {
+    "image": "preferencias.png"
+  },
+  {
+    "image": "provincias2.png"
+  },
+  {
+    "image": "rango-edad.jpg"
+  },
+  {
+    "image": "salud-marca.png"
+  },
+]
+
 export default function InformesPage() {
   const [selectedPdf, setSelectedPdf] = useState<string | null>(null);
+  const [selectedDashboard, setSelectedDashboard] = useState<string | null>(null);
   const [modalVisible, setModalVisible] = useState(false);
 
   const handleOpenPdf = (pdfPath: string) => {
@@ -164,7 +213,7 @@ export default function InformesPage() {
               <FilePdfOutlined className="!text-white text-sm" />
             </div>
             <Title level={2} className="!text-2xl !text-primary !mb-0 !font-bold">
-              Informes y Documentos
+              Informes
             </Title>
           </div>
           <div className="w-20 h-1 bg-primary mb-6"></div>
@@ -274,6 +323,135 @@ export default function InformesPage() {
           </div>
         </div>
       </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-8 md:py-12 space-y-8">
+        <div className="mb-6">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+              <DashboardOutlined className="!text-white text-sm" />
+            </div>
+            <Title level={2} className="!text-2xl !text-primary !mb-0 !font-bold">
+              Paneles de Datos
+            </Title>
+          </div>
+          <div className="w-20 h-1 bg-primary mb-6"></div>
+          
+          <div className="max-w-xl mb-8">
+            <div className="border-l-2 border-primary pl-4 py-2">
+              <Paragraph className="!text-gray-700 !text-sm !mb-0">
+                Explora nuestros dashboards con información acerca de nuestros últimos
+                trabajos realizados en análisis de datos. Haz clic en cualquier imagen 
+                para verla en tamaño completo.
+              </Paragraph>
+            </div>
+          </div>
+        </div>
+
+        {/* Grid de dashboards */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {dashboard.map((img, i) => (
+            <div 
+              key={i} 
+              className="group overflow-hidden rounded-lg border border-gray-200 hover:border-primary/30 transition-all duration-300 hover:shadow-lg cursor-pointer"
+              onClick={() => setSelectedDashboard(img.image)}
+            >
+              <div className="relative aspect-square bg-gray-50">
+                <Image
+                  src={`/images/dashboard/${img.image}`}
+                  alt={`Dashboard de análisis ${i + 1}`}
+                  fill
+                  className="object-contain p-3 group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+                {/* Overlay de zoom */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <div className="w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center">
+                    <EyeOutlined className="text-primary" />
+                  </div>
+                </div>
+              </div>
+              <div className="p-3 bg-white">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-medium text-primary px-2 py-1 bg-primary/10 rounded">
+                    Dashboard
+                  </span>
+                  <span className="text-xs text-gray-500">#{i + 1}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Contador */}
+        <div className="pt-6 border-t border-gray-200">
+          <div className="text-center">
+            <span className="text-sm text-gray-600">
+              {dashboard.length} dashboards de análisis • Haz clic para ampliar
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Modal para dashboard - Sólo se muestra cuando hay una imagen seleccionada */}
+      {selectedDashboard && (
+        <Modal
+          open={!!selectedDashboard}
+          onCancel={() => setSelectedDashboard(null)}
+          footer={null}
+          width="90%"
+          style={{ maxWidth: '1200px', top: 20 }}
+          styles={{
+            body: {
+              padding: 0,
+              overflow: 'hidden',
+            },
+          }}
+        >
+          <div className="relative">
+            {/* Botón de cerrar */}
+            <button
+              onClick={() => setSelectedDashboard(null)}
+              className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg hover:bg-white transition-colors duration-300"
+            >
+              <span className="text-gray-700 text-lg">×</span>
+            </button>
+            
+            {/* Imagen ampliada */}
+            <div className="relative w-full h-[80vh] bg-gray-100">
+              <Image
+                src={`/images/dashboard/${selectedDashboard}`}
+                alt="Dashboard ampliado"
+                fill
+                className="object-contain p-8"
+                sizes="100vw"
+              />
+            </div>
+            
+            {/* Información de la imagen */}
+            <div className="p-4 border-t bg-white">
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-sm font-semibold text-gray-800">
+                    {selectedDashboard.replace('.png', '').replace('-', ' ')}
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1">
+                    Dashboard de análisis • Haz zoom con Ctrl + Scroll
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => window.open(`/images/dashboard/${selectedDashboard}`, '_blank')}
+                    className="px-3 py-1 border border-primary text-primary text-xs rounded hover:bg-primary/10 transition-colors duration-300 flex items-center gap-1"
+                  >
+                    <EyeOutlined />
+                    <span>Abrir en nueva pestaña</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Modal>
+      )}
 
       <Modal
         title={
