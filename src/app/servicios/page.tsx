@@ -1,19 +1,16 @@
 "use client";
 
-import { Card, Typography, Row, Col, Divider } from "antd";
+import { Typography } from "antd";
 import { 
-  BarChartOutlined, 
-  LineChartOutlined, 
   TeamOutlined, 
   GlobalOutlined,
   RadarChartOutlined,
   BulbOutlined,
   FireOutlined,
   FundOutlined,
-  AuditOutlined,
   DatabaseOutlined,
-  CloudOutlined,
-  UserOutlined
+  UserOutlined,
+  SafetyOutlined
 } from "@ant-design/icons";
 import { useState } from "react";
 import Image from "next/image";
@@ -96,6 +93,21 @@ const SERVICES = [
       "Segmentación de audiencias digitales"
     ],
     details: "Comprensión del comportamiento humano en entornos digitales."
+  },
+  {
+    id: "servicios-juridicos",
+    title: "Servicios Jurídicos",
+    icon: <SafetyOutlined />,
+    color: "bg-secondary",
+    description: "Asesorías Legales Especializadas",
+    services: [
+      "Área constitucional",
+      "Área penal",
+      "Área civil",
+      "Área familiar",
+      "Área laboral"
+    ],
+    details: "Brindamos asesoría jurídica especializada en diversas áreas del derecho, garantizando soluciones confiables y profesionales."
   }
 ];
 
@@ -295,12 +307,6 @@ export default function ServiciosPage() {
                     <div className="space-y-6">
                       {/* Lista de servicios */}
                       <div>
-                        <div className="flex items-center mb-4">
-                          <div className="h-1 w-6 bg-primary rounded-full mr-3"></div>
-                          <Title level={4} className="!text-primary !mb-0 !text-base">
-                            Tipos de Informe
-                          </Title>
-                        </div>
                         <ul className="space-y-3">
                           {service.services.map((item, index) => (
                             <li key={index} className="flex items-start">

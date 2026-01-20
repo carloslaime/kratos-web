@@ -7,10 +7,10 @@ import Image from "next/image";
 const { Title, Paragraph } = Typography;
 
 const OBJECTIVE_TEXT = `
-Profesionalizar la forma de hacer política, combinando un enfoque pragmático
-con el uso de tecnologías de vanguardia, análisis de datos y estrategias
-inteligentes que permiten tomar decisiones acertadas, diseñar campañas más
-efectivas y conectar de manera real con la ciudadanía.
+  Profesionalizar la forma de hacer campaña, combinando un enfoque pragmático
+  con el uso de tecnologías de vanguardia, análisis de datos y estrategias
+  inteligentes que permiten tomar decisiones acertadas, diseñar campañas más
+  efectivas y conectar de manera real con la ciudadanía.
 `;
 
 const LABOR_ITEMS = [
@@ -27,20 +27,12 @@ const LABOR_ITEMS = [
     icon: <BarChartOutlined />
   },
   { 
-    text: "Monitoreo de partidos políticos",
-    icon: <EyeOutlined />
-  },
-  { 
     text: "Seguimiento de campañas electorales",
     icon: <RocketOutlined />
   },
   { 
     text: "Análisis de apoyo a Ministerios y entidades gubernamentales",
     icon: <TeamOutlined />
-  },
-  { 
-    text: "Identificación de temas de impacto global",
-    icon: <GlobalOutlined />
   },
   { 
     text: "Estrategias de candidaturas y planes de gobierno",
@@ -124,8 +116,14 @@ const MEMBERS = [
   },
   {
     name: "Lic. Sergio Vega",
-    description: "DIrector Institucional - Presidente del Colegio de Politólogos Santa Cruz",
+    description: "DIrector Político - Presidente del Colegio de Politólogos Santa Cruz",
     image: "/images/miembros/sergiovega.jpg",
+    country: "/images/paises/bolivia.webp"
+  },
+  {
+    name: "Eduardo Mendez",
+    description: "Director de Asuntos Jurídicos",
+    image: "/images/miembros/eduardomendez.jpg",
     country: "/images/paises/bolivia.webp"
   },
   {
@@ -142,7 +140,7 @@ const MEMBERS = [
   },
   {
     name: "Lic. Raul Alfonsin",
-    description: "Director de Asuntos Jurídicos - Consultor Jurídico",
+    description: "Consultor Jurídico",
     image: "/images/miembros/raulalfonsin.jpg",
     country: "/images/paises/bolivia.webp"
   },
@@ -156,6 +154,12 @@ const MEMBERS = [
     name: "Lic. Luis Serrate",
     description: "Consultor Político",
     image: "/images/miembros/luisserrate.jpg",
+    country: "/images/paises/bolivia.webp"
+  },
+  {
+    name: "Brayan Saucedo Tardío",
+    description: "Consultor Jurídico",
+    image: "/images/miembros/brayansaucedo.jpg",
     country: "/images/paises/bolivia.webp"
   },
 ]
@@ -328,7 +332,7 @@ export default function NosotrosPage() {
               
               <div className="max-w-xl mx-auto bg-white p-4 rounded border border-primary/10 mt-4">
                 <Paragraph className="!text-sm text-gray-700">
-                  Servicios especializados que integran tecnología de vanguardia con análisis político estratégico
+                  Servicios especializados que integran tecnología de vanguardia con análisis estratégico
                 </Paragraph>
               </div>
             </div>
@@ -336,7 +340,14 @@ export default function NosotrosPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {LABOR_ITEMS.map((item, index) => (
-              <div key={index} className="group">
+              <div
+                key={index}
+                className={`group ${
+                  LABOR_ITEMS.length % 3 !== 0 && index >= LABOR_ITEMS.length - (LABOR_ITEMS.length % 3)
+                    ? 'lg:col-span-3 flex justify-center'
+                    : ''
+                }`}
+              >
                 <Card
                   className="!rounded-lg !border !border-gray-200 hover:!border-primary/20 !bg-white hover:!shadow-md transition-all duration-200 h-full"
                   styles={{
@@ -533,88 +544,79 @@ export default function NosotrosPage() {
         </div>
 
         <div className="my-12">
-  <div className="mb-10">
-    <div className="flex items-center gap-4 mb-6">
-      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-        <GlobalOutlined className="!text-white text-sm" />
-      </div>
-      <Title level={2} className="!text-2xl !text-primary !mb-0 !font-bold">
-        Aliados Internacionales Estratégicos
-      </Title>
-    </div>
-    <div className="w-24 h-1 bg-primary mb-6"></div>
-  </div>
-
-  {/* Miembros internacionales */}
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {MEMBERS.map((member, index) => (
-      <div key={index} className="group">
-        <div className="h-full border border-gray-200 rounded-lg p-6 hover:border-primary/30 transition-all duration-200">
-          {/* Foto del miembro */}
-          <div className="flex justify-center mb-4">
-            <div className="relative">
-              <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-primary">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
-                />
+          <div className="mb-10">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+                <GlobalOutlined className="!text-white text-sm" />
               </div>
-              
-              {/* Bandera */}
-              <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full border-2 border-white bg-white overflow-hidden">
-                <div className="relative w-full h-full">
-                  <Image
-                    src={member.country}
-                    alt="Bolivia"
-                    fill
-                    sizes="40px"
-                    className="object-cover"
-                  />
+              <Title level={2} className="!text-2xl !text-primary !mb-0 !font-bold">
+                Nuestro Equipo
+              </Title>
+            </div>
+            <div className="w-24 h-1 bg-primary mb-6"></div>
+          </div>
+
+          {/* Miembros internacionales */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {MEMBERS.map((member, index) => (
+              <div key={index} className="group">
+                <div className="h-full border border-gray-200 rounded-lg p-6 hover:border-primary/30 transition-all duration-200">
+                  {/* Foto del miembro */}
+                  <div className="flex justify-center mb-4">
+                    <div className="relative">
+                      <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-primary">
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover"
+                        />
+                      </div>
+                      
+                      {/* Bandera */}
+                      <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full border-2 border-white bg-white overflow-hidden">
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={member.country}
+                            alt="Bolivia"
+                            fill
+                            sizes="40px"
+                            className="object-cover"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Nombre */}
+                  <Title level={3} className="!text-primary !text-center !text-lg !mb-2 font-bold">
+                    {member.name}
+                  </Title>
+
+                  {/* Cargo */}
+                  <div className="mb-4">
+                    <Paragraph className="!text-gray-700 !text-sm !text-center !leading-relaxed !mb-0">
+                      {member.description}
+                    </Paragraph>
+                  </div>
+
+                  {/* Separador */}
+                  <div className="w-16 h-0.5 bg-primary/30 mx-auto my-4"></div>
+
+                  {/* Indicador */}
+                  <div className="flex justify-center">
+                    <div className="flex items-center gap-1">
+                      <div className="w-1 h-1 rounded-full bg-primary"></div>
+                      <div className="w-1 h-1 rounded-full bg-secondary"></div>
+                      <div className="w-1 h-1 rounded-full bg-primary"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Nombre */}
-          <Title level={3} className="!text-primary !text-center !text-lg !mb-2 font-bold">
-            {member.name}
-          </Title>
-
-          {/* Cargo */}
-          <div className="mb-4">
-            <Paragraph className="!text-gray-700 !text-sm !text-center !leading-relaxed !mb-0">
-              {member.description}
-            </Paragraph>
-          </div>
-
-          {/* Separador */}
-          <div className="w-16 h-0.5 bg-primary/30 mx-auto my-4"></div>
-
-          {/* Indicador */}
-          <div className="flex justify-center">
-            <div className="flex items-center gap-1">
-              <div className="w-1 h-1 rounded-full bg-primary"></div>
-              <div className="w-1 h-1 rounded-full bg-secondary"></div>
-              <div className="w-1 h-1 rounded-full bg-primary"></div>
-            </div>
+            ))}
           </div>
         </div>
-      </div>
-    ))}
-  </div>
-
-  {/* Separador final */}
-  <div className="mt-10 pt-6 border-t border-gray-200">
-    <div className="text-center">
-      <Paragraph className="!text-sm !text-gray-500 !mb-0">
-        Expertos en estrategia política internacional
-      </Paragraph>
-    </div>
-  </div>
-</div>
 
         <div className="text-center pt-8">
           <div className="w-20 h-0.5 mx-auto bg-gradient-to-r from-primary to-secondary rounded-full mb-6"></div>
