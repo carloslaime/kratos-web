@@ -313,17 +313,14 @@ export default function MainContent() {
           <div className="relative group">
             <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-3xl opacity-50 blur-xl group-hover:opacity-70 transition-opacity duration-500"></div>
 
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-primary/20 bg-white">
-              <video
-                className="w-full aspect-video object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700"
-                controls
-                preload="metadata"
-                poster="/images/gris-bg-blanco.jpg"
-                aria-label="Video de presentación de Poli Kratos - Transformando datos en estrategias políticas"
-              >
-                <source src="/videos/kratos-presentacion.mp4" type="video/mp4" />
-                Tu navegador no soporta el elemento de video.
-              </video>
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-primary/20 bg-white">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/tD8fayhXmuw?controls=0&modestbranding=1&rel=0&showinfo=0&fs=0"
+                title="Video de presentación Poli Kratos"
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+              />
             </div>
 
             <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-secondary/30 animate-pulse"></div>
