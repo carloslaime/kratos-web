@@ -134,13 +134,13 @@ const MEMBERS = [
   },
   {
     name: "Msg. Gustavo Villegas",
-    description: "Director de Relaciones Públicas",
+    description: "Consultor y Asesor Jurídico",
     image: "/images/miembros/gustavovillegas.jpg",
     country: "/images/paises/bolivia.webp"
   },
   {
     name: "Lic. Raul Alfonsin",
-    description: "Consultor Jurídico",
+    description: "Director de Relaciones Públicas",
     image: "/images/miembros/raulalfonsin.jpg",
     country: "/images/paises/bolivia.webp"
   },
@@ -154,12 +154,6 @@ const MEMBERS = [
     name: "Lic. Luis Serrate",
     description: "Consultor Político",
     image: "/images/miembros/luisserrate.jpg",
-    country: "/images/paises/bolivia.webp"
-  },
-  {
-    name: "Brayan Saucedo Tardío",
-    description: "Consultor Jurídico",
-    image: "/images/miembros/brayansaucedo.jpg",
     country: "/images/paises/bolivia.webp"
   },
 ]

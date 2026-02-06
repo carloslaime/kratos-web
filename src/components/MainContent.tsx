@@ -1,6 +1,6 @@
 "use client"
 
-import { Button, Typography, Card, Avatar, Rate } from "antd";
+import { Button, Typography, Card, Avatar, Rate, Carousel } from "antd";
 import Image from 'next/image'
 import { 
   FaChartLine, FaBullseye, FaUsers, FaChevronRight, 
@@ -30,25 +30,25 @@ export default function MainContent() {
 
   const testimonials = [
     {
-      content: "El equipo demostró un entendimiento profundo del panorama político digital. Su estrategia fue clave para conectar con votantes jóvenes sin comprometer nuestro mensaje principal.",
+      content: "Entendieron el clima político y social desde el primer día. No solo propusieron ideas, sino que supieron cuándo hablar, cómo hacerlo y a quién dirigir el mensaje.",
       role: "Candidato Presidencial",
       country: "Bolivia",
       rating: 5
     },
     {
-      content: "La precisión en el análisis de datos nos permitió ajustar nuestra campaña en tiempo real. Los resultados superaron todas las expectativas de nuestro equipo interno.",
+      content: "Gracias a sus reportes y métricas dejamos de trabajar por intuición. Cada decisión de campaña se tomó con información clara y resultados medibles.",
       role: "Ex Candidato Presidencial",
       country: "Bolivia",
       rating: 5
     },
     {
-      content: "Su enfoque estratégico transformó nuestra comunicación digital. Logramos aumentar nuestra visibilidad en redes sociales manteniendo una imagen coherente y profesional.",
+      content: "Pasamos de tener presencia digital a tener influencia real. La estrategia logró posicionar el mensaje sin caer en improvisaciones ni contradicciones.",
       role: "Candidata Presidencial",
       country: "Europa",
       rating: 4
     },
     {
-      content: "La combinación de análisis técnico y comprensión política fue invaluable. Nos ayudaron a navegar situaciones complejas con respuestas estratégicas efectivas.",
+      content: "Aportaron claridad en momentos de alta presión política. Su lectura del contexto y la rapidez de respuesta marcaron una diferencia decisiva en la campaña.",
       role: "Asesor de Campaña Presidencial",
       country: "Sudamérica",
       rating: 5
@@ -313,17 +313,14 @@ export default function MainContent() {
           <div className="relative group">
             <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-3xl opacity-50 blur-xl group-hover:opacity-70 transition-opacity duration-500"></div>
 
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-primary/20 bg-white">
-              <video
-                className="w-full aspect-video object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700"
-                controls
-                preload="metadata"
-                poster="/images/gris-bg-blanco.jpg"
-                aria-label="Video de presentación de Poli Kratos - Transformando datos en estrategias políticas"
-              >
-                <source src="/videos/kratos-presentacion.mp4" type="video/mp4" />
-                Tu navegador no soporta el elemento de video.
-              </video>
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border border-primary/20 bg-white">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/tD8fayhXmuw?controls=0&modestbranding=1&rel=0&showinfo=0&fs=0"
+                title="Video de presentación Poli Kratos"
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+              />
             </div>
 
             <div className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-secondary/30 animate-pulse"></div>
@@ -381,6 +378,86 @@ export default function MainContent() {
                 Duración: 2-3 minutos • HD
               </span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Contenido a la izquierda */}
+          <div className="relative">
+            <div className="relative mb-4">
+              <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-primary rounded-full animate-pulse-slow opacity-60"></div>
+              <Title
+                level={2}
+                className="!text-2xl md:!text-3xl lg:!text-4xl font-bold pl-6"
+              >
+                <span className="text-primary block">Eventos y</span>
+                <span className="text-secondary block mt-2">
+                  Presentaciones Organizadas
+                </span>
+              </Title>
+            </div>
+
+            <div className="relative pl-6">
+              <div className="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-primary/30 to-secondary/30 rounded-full"></div>
+              <Paragraph className="text-secondary/80 text-sm md:text-base leading-relaxed max-w-lg">
+                Participamos en eventos estratégicos donde compartimos nuestra experiencia en
+                <span className="font-semibold text-primary"> análisis de datos</span> y
+                <span className="font-semibold text-secondary"> comunicación política</span> 
+                con líderes y candidatos de toda la región.
+              </Paragraph>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-3xl opacity-50 blur-xl"></div>
+            
+            <div className="relative bg-white rounded-2xl p-4 shadow-xl border border-primary/10">
+              <div className="carousel-container">
+                <Carousel
+                  autoplay
+                  autoplaySpeed={4000}
+                  dots={true}
+                  dotPosition="bottom"
+                  arrows={true}
+                  className="rounded-lg overflow-hidden"
+                >
+                  {[1, 2, 3, 4].map((num) => (
+                    <div key={num} className="relative">
+                      <div className="relative h-64 md:h-80 w-full overflow-hidden rounded-lg">
+                        <Image
+                          src={`/images/eventos/evento${num}.jpeg`}
+                          alt={`Evento ${num} - Poli Kratos`}
+                          fill
+                          className="object-cover hover:scale-105 transition-transform duration-700"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          priority={num === 1}
+                        />
+                        
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/30 to-transparent opacity-60"></div>
+                      </div>
+                    </div>
+                  ))}
+                </Carousel>
+              </div>
+              
+              {/* Indicadores personalizados */}
+              <div className="flex items-center justify-center gap-3 mt-4">
+                <div className="flex items-center gap-1">
+                  <div className="w-2 h-2 rounded-full bg-primary/30"></div>
+                  <div className="w-2 h-2 rounded-full bg-secondary/30"></div>
+                  <div className="w-2 h-2 rounded-full bg-primary/30"></div>
+                </div>
+                <span className="text-xs text-secondary/60 font-medium">
+                  Desliza para ver más eventos
+                </span>
+              </div>
+            </div>
+            
+            {/* Elementos decorativos */}
+            <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-secondary/20 animate-pulse"></div>
+            <div className="absolute -bottom-2 -left-2 w-6 h-6 rounded-full bg-primary/20 animate-pulse" style={{animationDelay: '0.5s'}}></div>
           </div>
         </div>
       </section>
