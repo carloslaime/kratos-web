@@ -39,9 +39,6 @@ const dashboard = [
     "image": "angelica-perfilamiento.png"
   },
   {
-    "image": "angelica-polaridad.png"
-  },
-  {
     "image": "cluster-publicaciones1.png"
   },
   {
