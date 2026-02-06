@@ -7,7 +7,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaInstagram, FaFacebook, FaTikt
 export default function Footer() {
   const address = "Calle 21 de Mayo #683, Edificio Kratos";
   const mapsUrl = "https://www.google.com/maps/search/?api=1&query=Calle+21+de+Mayo+683";
-  const cellphone = "+591 77924704";
+  const cellphone = "+591 77924704 - +591 77694976";
   const email = "polikratos.srl@gmail.com";
   
   const socialLinks = {
